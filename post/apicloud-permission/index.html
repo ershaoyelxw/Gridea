@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>apicloud_android真机同步后，Loader无法正常加载代码解决方法 | Gridea</title>
+<link rel="shortcut icon" href="/Users/mac/Documents/Gridea/output/favicon.ico?v=1556435384133">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="/Users/mac/Documents/Gridea/output/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="/Users/mac/Documents/Gridea/output">
+  <img class="avatar" src="/Users/mac/Documents/Gridea/output/images/avatar.png?v=1556435384133" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              apicloud_android真机同步后，Loader无法正常加载代码解决方法
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-28 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <h4 id="关于android动态权限和targetsdkversion">关于Android动态权限和targetSdkVersion</h4>
+<p>Android系统自6.0开始，提供动态权限机制，对于敏感权限（存储，定位，录音，拍照，录像等），需要在APP运行过程中动态向用户申请，这点和IOS系统使用体验一致。
+在Android上使用动态权限，要求APP编译的目标sdk（即targetSdkVersion）为23及以上，22及以下系统会执行缺省处理（手机厂商也可能定制处理），APICloud为简便开发，默认配置targetSdkVersion为20，即走系统缺省处理，不允许更改。</p>
+<h4 id="有许多原生app转到apicloud开发后因targetsdkversion降级而导致无法覆盖安装另外自2018年11月开始googleplay将要求app编译目标sdk必须为26及以上否则不予提交审核">有许多原生APP转到APICloud开发后，因targetSdkVersion降级而导致无法覆盖安装；另外自2018年11月开始，GooglePlay将要求APP编译目标sdk必须为26及以上，否则不予提交审核。</h4>
+<h4 id="现介绍如何自定义编译targetsdkversion值">现介绍如何自定义编译targetSdkVersion值：</h4>
+<p>1、下载附件中的manifest.xml，将其中的targetSdkVersion更新为目标值，例如26；
+2、将manifest.xml置于你的/项目代码/res/目录下（widget/res/manifest.xml），提交代码；
+3、云编译界面勾选APP所需的权限；
+4、使用升级环境编译 即可。</p>
+<h4 id="注意当你设置的targetsdkversion大于等于23时即开启了动态权限如果你的app带有定位录音拍照录像等敏感功能时所有权限见文档必须使用动态权限机制先判断是否具有该功能操作权限再进行操作如果不具备相应的权限对应的功能是失效的也可能导致崩溃-涉及的两个apihaspermission-requestpermission">注意：当你设置的targetSdkVersion大于等于23时，即开启了动态权限，如果你的APP带有定位，录音，拍照，录像等敏感功能时（所有权限见文档），必须使用动态权限机制，先判断是否具有该功能操作权限，再进行操作，如果不具备相应的权限，对应的功能是失效的（也可能导致崩溃）。涉及的两个API：hasPermission | requestPermission</h4>
+<h3 id="当你设置的targetsdkversion大于等于23时如果是编译自定义loader安装到手机后需要先在设置中给应用打开存储空间权限-否则wifi同步后loader无法正常加载代码">当你设置的targetSdkVersion大于等于23时，如果是编译自定义loader，安装到手机后，需要先在设置中给应用打开存储空间权限。否则，WiFi同步后，loader无法正常加载代码。</h3>
+<p>为保证动态权限尽可能适配更多厂商的手机以及顺利上线Google Play，targetSdkVersion目前推荐设置为26.</p>
+<ul>
+<li>来自 <a href="https://community.apicloud.com/bbs/thread-110959-1-1.html">https://community.apicloud.com/bbs/thread-110959-1-1.html</a></li>
+</ul>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="/Users/mac/Documents/Gridea/output/post/js-address/index.html">
+              <h3 class="post-title">
+                JS地区列表JSON
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
