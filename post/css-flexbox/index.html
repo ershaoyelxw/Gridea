@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于我 | Gridea</title>
+<title>css-flexbox遭遇text-overflow:hidden失效问题 | Gridea</title>
 <link rel="shortcut icon" href="https://ershaoyelxw.github.io/favicon.ico?v=1556436474391">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/styles/main.css">
@@ -72,23 +72,40 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于我
+              css-flexbox遭遇text-overflow:hidden失效问题
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-01-25 ·
+                · 2019-04-28 ·
               </time>
+              
+                <a href="https://ershaoyelxw.github.io/tag/Fw5HMNT7U" class="post-tags">
+                  # css
+                </a>
               
             </div>
             
             <div class="post-content">
-              <p>这是关于的页面，可以在这里向世界介绍你！
-哈哈</p>
+              <p>最近在项目中遇到使用flexbox的时候，在使用flexbox元素中使用text-overflow:hidden；white-space:nowrap；进行省略文字的操作。</p>
+<p>发现flexbox失效，会使页面溢出。</p>
+<p>解决方法:</p>
+<p>flex-item元素增加下面样式</p>
+<pre><code>min-width: 0;
+</code></pre>
 
             </div>
           </article>
         </div>
     
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://ershaoyelxw.github.io/post/js-regx">
+              <h3 class="post-title">
+                JS正则表达式
+              </h3>
+            </a>
+          </div>  
         
 
         

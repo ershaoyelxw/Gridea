@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于我 | Gridea</title>
+<title>css-移动前端的一些坑解决方法 | Gridea</title>
 <link rel="shortcut icon" href="https://ershaoyelxw.github.io/favicon.ico?v=1556436474391">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/styles/main.css">
@@ -72,23 +72,39 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于我
+              css-移动前端的一些坑解决方法
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-01-25 ·
+                · 2019-04-28 ·
               </time>
               
             </div>
             
             <div class="post-content">
-              <p>这是关于的页面，可以在这里向世界介绍你！
-哈哈</p>
+              <p>外观表现
+placeholder属性设置的文字向上偏移</p>
+<p>解决方法：</p>
+<pre><code>line-height:normal
+</code></pre>
+<p>body设置100%高度后，在移动浏览器里面可能会被底部的导航栏挡住
+解决方法：</p>
+<pre><code>document.documentElement.style.height = window.innerHeight + 'px'
+</code></pre>
 
             </div>
           </article>
         </div>
     
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://ershaoyelxw.github.io/post/css-flexbox">
+              <h3 class="post-title">
+                css-flexbox遭遇text-overflow:hidden失效问题
+              </h3>
+            </a>
+          </div>  
         
 
         

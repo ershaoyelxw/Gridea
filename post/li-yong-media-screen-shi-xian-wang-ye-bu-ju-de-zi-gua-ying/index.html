@@ -1,0 +1,232 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>利用@media screen实现网页布局的自适应 | Gridea</title>
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/favicon.ico?v=1556436474391">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://ershaoyelxw.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://ershaoyelxw.github.io">
+  <img class="avatar" src="https://ershaoyelxw.github.io/images/avatar.png?v=1556436474391" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              利用@media screen实现网页布局的自适应
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-28 ·
+              </time>
+              
+                <a href="https://ershaoyelxw.github.io/tag/Fw5HMNT7U" class="post-tags">
+                  # css
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>开始研究响应式web设计，CSS3 Media Queries是入门。
+Media Queries，其作用就是允许添加表达式用以确定媒体的环境情况，以此来应用不同的样式表</p>
+<p>两种方式：</p>
+<ol>
+<li>一种是直接在link中判断设备的尺寸，然后引用不同的css文件</li>
+</ol>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styleA.css&quot; media=&quot;screen and (min-width: 400px)&quot;&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styleB.css&quot;  media=&quot;screen and (min-width: 600px) and (max-width: 800px)&quot;&gt;
+</code></pre>
+<ol start="2">
+<li>直接写在<style>标签里</li>
+</ol>
+<pre><code>	@media screen and (max-width: 600px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+.class {
+  background: #ccc;
+}
+}
+</code></pre>
+<p>补充：media query中的not only all等关键字 not: not是用来排除掉某些特定的设备的，比如 @media not print（非打印设备）only: 用来定某种特别的媒体类型。对于支持Media Queries的移动设备来说，如果存在only关键字，移动设备的Web浏览器会忽略only关键字并直接根据后面的表达式应用样式文件。对于不支持 Media Queries的设备但能够读取Media Type类型的Web浏览器，遇到only关键字时会忽略这个样式文件。all: 所有设备，这个应该经常看到 还有其它一些：</p>
+<p>media_type 设备类型说明</p>
+<p>|—– all 所有设备</p>
+<p>|—– aural 听觉设备</p>
+<p>|—– braille 点字触觉设备</p>
+<p>|—– handled 便携设备，如手机、平板电脑</p>
+<p>|—– print 打印预览图等</p>
+<p>|—– projection 投影设备</p>
+<p>|—– screen 显示器、笔记本、移动端等设备</p>
+<p>|—– tty 如打字机或终端等设备</p>
+<p>|—– tv 电视机等设备类型</p>
+<p>|—– embossed 盲文打印机</p>
+<p>demo</p>
+<pre><code>	&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+  &lt;title&gt;css3-media-queries-demo&lt;/title&gt;
+  &lt;style&gt;
+  body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+      padding: 0;
+      margin: 0;
+  }
+  .content{
+      zoom:1;
+  }
+  .content:after{
+      content: &quot;.&quot;;
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; 
+  }
+  .leftBox, .rightBox{
+      float: left;
+      width: 20%;
+      height: 500px;
+      margin: 5px;
+      background: #ffccf7;
+      display: inline;
+      -webkit-transition: width 1s ease;
+      -moz-transition: width 1s ease;
+      -o-transition: width 1s ease;
+      -ms-transition: width 2s ease;
+      transition: width 1s ease;
+  }
+  .middleBox{
+      float: left;
+      width: 50%;
+      height: 800px;
+      margin: 5px;
+      background: #b1fffc;
+      display: inline;
+      -webkit-transition: width 1s ease;
+      -moz-transition: width 1s ease;
+      -o-transition: width 1s ease;
+      -ms-transition: width 1s ease;
+      transition: width 1s ease;
+  }
+  .rightBox{
+      background: #fffab1;
+  }
+  @media only screen and (min-width: 1024px){
+      .content{
+              width: 1000px;
+              margin: auto
+          }
+  }
+  @media only screen and (min-width: 400px) and (max-width: 1024px){
+      .rightBox{
+          width: 0;
+      }
+      .leftBox{ width: 30%}
+      .middleBox{ width: 65%}
+  }
+  @media only screen and (max-width: 400px){
+      .leftBox, .rightBox, .middleBox{ 
+          width: 98%;
+          height: 200px;
+      }
+  }
+  &lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+  &lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;leftBox&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;middleBox&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;rightBox&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>文章转载自：http://www.cnblogs.com/mofish/archive/2012/05/23/2515218.html (责任编辑：网页模板)</p>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://ershaoyelxw.github.io/post/vim-chang-yong-kuai-jie-jian">
+              <h3 class="post-title">
+                vim常用快捷键
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

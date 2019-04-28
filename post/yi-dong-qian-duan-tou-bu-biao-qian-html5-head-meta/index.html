@@ -1,0 +1,237 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>移动前端头部标签(HTML5 head meta) | Gridea</title>
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/favicon.ico?v=1556436474391">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://ershaoyelxw.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://ershaoyelxw.github.io">
+  <img class="avatar" src="https://ershaoyelxw.github.io/images/avatar.png?v=1556436474391" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              移动前端头部标签(HTML5 head meta)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-28 ·
+              </time>
+              
+                <a href="https://ershaoyelxw.github.io/tag/3Bw8-uM5a" class="post-tags">
+                  # html
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>移动前端开发中添加一些webkit专属的HTML5头部标签，帮助浏览器更好解析HTML代码，更好地将移动web前端页面表现出来。本文整理一些常用的meta标签。</p>
+<pre><code>&lt;!DOCTYPE html&gt; &lt;!-- 使用 HTML5 doctype，不区分大小写 --&gt;
+&lt;html lang=&quot;zh-cmn-Hans&quot;&gt; &lt;!-- 更加标准的 lang 属性写法 http://zhi.hu/XyIa --&gt;
+&lt;head&gt;
+    &lt;!-- 声明文档使用的字符编码 --&gt;
+    &lt;meta charset='utf-8'&gt;
+    &lt;!-- 优先使用 IE 最新版本和 Chrome --&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;
+    &lt;!-- 页面描述 --&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;不超过150个字符&quot;/&gt;
+    &lt;!-- 页面关键词 --&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;&quot;/&gt;
+    &lt;!-- 网页作者 --&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;name, email@gmail.com&quot;/&gt;
+    &lt;!-- 搜索引擎抓取 --&gt;
+    &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;/&gt;
+    &lt;!-- 为移动设备添加 viewport --&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no&quot;&gt;
+    &lt;!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz --&gt;
+    
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&quot;/&gt;&lt;!-- 手机视图 --&gt;
+    &lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot; /&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;
+    &lt;!-- UC默认竖屏 ，UC强制全屏 --&gt;
+    &lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;/&gt;
+    &lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&gt;
+    &lt;!-- QQ强制竖屏 QQ强制全屏 --&gt;
+    &lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;/&gt;
+    &lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;/&gt;
+    &lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;/&gt;
+
+    &lt;!-- iOS 设备 begin --&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;标题&quot;&gt;
+    &lt;!-- 添加到主屏后的标题（iOS 6 新增） --&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;
+    &lt;!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 --&gt;
+
+    &lt;meta name=&quot;apple-itunes-app&quot; content=&quot;app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL&quot;&gt;
+    &lt;!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） --&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;/&gt;
+    &lt;!-- 设置苹果工具栏颜色 --&gt;
+    &lt;meta name=&quot;format-detection&quot; content=&quot;telphone=no, email=no&quot;/&gt;
+    &lt;!-- 忽略页面中的数字识别为电话，忽略email识别 --&gt;
+    &lt;!-- 启用360浏览器的极速模式(webkit) --&gt;
+    &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;
+    &lt;!-- 避免IE使用兼容模式 --&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;!-- 不让百度转码 --&gt;
+    &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot; /&gt;
+    &lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;
+    &lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot;&gt;
+    &lt;!-- 微软的老式浏览器 --&gt;
+    &lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot;&gt;
+    &lt;!-- uc强制竖屏 --&gt;
+    &lt;meta name=&quot;screen-orientation&quot; content=&quot;portrait&quot;&gt;
+    &lt;!-- QQ强制竖屏 --&gt;
+    &lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;&gt;
+    &lt;!-- UC强制全屏 --&gt;
+    &lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;&gt;
+    &lt;!-- QQ强制全屏 --&gt;
+    &lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;&gt;
+    &lt;!-- UC应用模式 --&gt;
+    &lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;&gt;
+    &lt;!-- QQ应用模式 --&gt;
+    &lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;&gt;
+    &lt;!-- windows phone 点击无高光 --&gt;
+    &lt;meta name=&quot;msapplication-tap-highlight&quot; content=&quot;no&quot;&gt;
+    &lt;!-- iOS 图标 begin --&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;/apple-touch-icon-57x57-precomposed.png&quot;/&gt;
+    &lt;!-- iPhone 和 iTouch，默认 57x57 像素，必须有 --&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;/apple-touch-icon-114x114-precomposed.png&quot;/&gt;
+    &lt;!-- Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有 --&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;/apple-touch-icon-144x144-precomposed.png&quot;/&gt;
+    &lt;!-- Retina iPad，144x144 像素，可以没有，但推荐有 --&gt;
+    &lt;!-- iOS 图标 end --&gt;
+
+    &lt;!-- iOS 启动画面 begin --&gt;
+    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;768x1004&quot; href=&quot;/splash-screen-768x1004.png&quot;/&gt;
+    &lt;!-- iPad 竖屏 768 x 1004（标准分辨率） --&gt;
+    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;1536x2008&quot; href=&quot;/splash-screen-1536x2008.png&quot;/&gt;
+    &lt;!-- iPad 竖屏 1536x2008（Retina） --&gt;
+    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;1024x748&quot; href=&quot;/Default-Portrait-1024x748.png&quot;/&gt;
+    &lt;!-- iPad 横屏 1024x748（标准分辨率） --&gt;
+    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;2048x1496&quot; href=&quot;/splash-screen-2048x1496.png&quot;/&gt;
+    &lt;!-- iPad 横屏 2048x1496（Retina） --&gt;
+
+    &lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;/splash-screen-320x480.png&quot;/&gt;
+    &lt;!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) --&gt;
+    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;640x960&quot; href=&quot;/splash-screen-640x960.png&quot;/&gt;
+    &lt;!-- iPhone/iPod Touch 竖屏 640x960 (Retina) --&gt;
+    &lt;link rel=&quot;apple-touch-startup-image&quot; sizes=&quot;640x1136&quot; href=&quot;/splash-screen-640x1136.png&quot;/&gt;
+    &lt;!-- iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina) --&gt;
+    &lt;!-- iOS 启动画面 end --&gt;
+
+    &lt;!-- iOS 设备 end --&gt;
+    &lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#000&quot;/&gt;
+    &lt;!-- Windows 8 磁贴颜色 --&gt;
+    &lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;icon.png&quot;/&gt;
+    &lt;!-- Windows 8 磁贴图标 --&gt;
+
+    &lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS&quot; href=&quot;/rss.xml&quot;/&gt;
+    &lt;!-- 添加 RSS 订阅 --&gt;
+    &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/ico&quot; href=&quot;/favicon.ico&quot;/&gt;
+    &lt;!-- 添加 favicon icon --&gt;
+
+    &lt;!-- sns 社交标签 begin --&gt;
+    &lt;!-- 参考微博API --&gt;
+    &lt;meta property=&quot;og:type&quot; content=&quot;类型&quot; /&gt;
+    &lt;meta property=&quot;og:url&quot; content=&quot;URL地址&quot; /&gt;
+    &lt;meta property=&quot;og:title&quot; content=&quot;标题&quot; /&gt;
+    &lt;meta property=&quot;og:image&quot; content=&quot;图片&quot; /&gt;
+    &lt;meta property=&quot;og:description&quot; content=&quot;描述&quot; /&gt;
+    &lt;!-- sns 社交标签 end --&gt;
+
+    &lt;title&gt;标题&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+<p>参考：http://www.haorooms.com/post/html_meta_ds</p>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://ershaoyelxw.github.io/post/css-yi-dong-qian-duan-de-yi-xie-keng-jie-jue-fang-fa">
+              <h3 class="post-title">
+                css-移动前端的一些坑解决方法
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
