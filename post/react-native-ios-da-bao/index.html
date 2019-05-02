@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React-Native ios打包 | Ershaoye</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1556586761922">
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1556815359013">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
@@ -18,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1556586761922" alt="">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1556815359013" alt="">
   </a>
   <h1 class="site-title">
     Ershaoye
@@ -86,13 +86,37 @@
             </div>
             
             <div class="post-content">
-              <ul>
-<li>创建证书的个人证书和公司证书</li>
-<li>在自己项目的ios文件夹下新建一个bundle文件夹</li>
+              <h3 id="创建证书的个人证书和公司证书">创建证书的个人证书和公司证书</h3>
+<h3 id="生成bundle文件夹">生成bundle文件夹</h3>
+<ul>
+<li>在Xcode自己项目IOS文件夹下新建一个bundle文件夹</li>
+</ul>
+<ol>
+<li>--entry-file  ios或者android入口的js名称，如index.js</li>
+<li>--platform  平台名称(iOS、Android)</li>
+<li>--dev  设置为false，将会对JavaScript代码进行优化处理。</li>
+<li>--bundle-output 生成的jsbundle文件的名称，如./ios/bundle/index.jsbundle</li>
+<li>--assets-dest 图片以及其他资源存放的目录，如./ios/bundle</li>
+</ol>
+<ul>
 <li>在项目package.json文件script添加命令</li>
 </ul>
 <pre><code>react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle
 </code></pre>
+<ul>
+<li>执行命令进行打包</li>
+</ul>
+<pre><code>npm run bundle-ios
+</code></pre>
+<p><strong>打包生成完成之后，在IOS目录下看到一个bundle目录，这个目录就是bundle生成的离线资源。</strong></p>
+<h3 id="在xcode导入bundle文件夹">在Xcode导入bundle文件夹</h3>
+<ul>
+<li>使用Create folder references的方式添加文件夹.</li>
+<li>在Xcode项目文件夹右键</li>
+<li>Add Files to &quot;项目名&quot;</li>
+<li>选择bundle文件,在option中选择Create folder references</li>
+</ul>
+<h3 id="设置appdelegatem">设置AppDelegate.m</h3>
 <ul>
 <li>使用Xcode打开项目，在AppDelegate.m文件里添加生产环境配置</li>
 </ul>
@@ -102,6 +126,7 @@ jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExt
 // 生产环境：真机
 jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;bundle/index&quot; withExtension:@&quot;jsbundle&quot;];
 </code></pre>
+<h3 id="开始打包">开始打包</h3>
 <ul>
 <li>Xcode &gt; Product &gt; Scheme &gt; Edit Scheme, 把项目debug状态改成release状态</li>
 <li>在Xcode左上角选择 Generic iOS Device ，修改Version、Build</li>

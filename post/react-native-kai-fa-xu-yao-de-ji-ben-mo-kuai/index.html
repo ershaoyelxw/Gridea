@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React-Native 开发需要的基本模块 | Ershaoye</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1556586761922">
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1556815359013">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
@@ -18,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1556586761922" alt="">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1556815359013" alt="">
   </a>
   <h1 class="site-title">
     Ershaoye
@@ -93,7 +93,37 @@ ICON： https://github.com/oblador/react-native-vector-icons
 轮播： https://github.com/archriss/react-native-snap-carousel
 Drawer： https://github.com/root-two/react-native-drawer
 启动页： https://github.com/FuYaoDe/react-native-app-intro
-<code>yarn add https://github.com/merryjs/react-native-app-intro</code></p>
+扫码： https://github.com/MarnoDev/AC-QRCode-RN
+https://www.jianshu.com/p/b46328ba1b33
+权限： https://github.com/yonahforst/react-native-permissions</p>
+<p>panel： https://github.com/octopitus/rn-sliding-up-panel
+骨架屏： https://github.com/mfrachet/rn-placeholder
+html： https://github.com/jsdf/react-native-htmlview
+header： https://github.com/bamlab/react-native-image-header-scroll-view
+pop-up： https://github.com/instea/react-native-popup-menu
+启动屏： https://github.com/react-native-component/react-native-smart-splash-screen
+https://www.jianshu.com/p/4540ac17dfd4
+https://www.jianshu.com/p/56562e5a9396?from=timeline&amp;isappinstalled=0</p>
+<p>自动清理计时器： https://github.com/react-native-component/react-native-smart-timer-enhance</p>
+<p>webview相互调用函数：https://github.com/pinqy520/react-native-webview-invoke
+webview: https://github.com/iou90/react-native-autoheight-webview</p>
+<p>tab： https://github.com/react-native-community/react-native-tab-view
+grid： https://github.com/saleel/react-native-super-grid
+chart: https://github.com/wuxudong/react-native-charts-wrapper</p>
+<p>服务器发送事件: https://github.com/jordanbyron/react-native-event-source</p>
+<p>imgpicket: https://github.com/mg365/react-native-customized-image-picker
+https://github.com/react-native-community/react-native-image-picker</p>
+<p>清理缓存:  https://github.com/reactnativecn/react-native-http-cache
+https://www.cnblogs.com/pengsi/p/7810439.html
+https://www.jianshu.com/p/395f752018fa</p>
+<p>微信模块： https://github.com/yorkie/react-native-wechat
+https://www.jianshu.com/p/6a792118fae4</p>
+<p>fs： https://github.com/itinance/react-native-fs
+踩坑集合： https://github.com/ChenYilong/iOS9AdaptationTips</p>
+<pre><code>```
+yarn add https://github.com/merryjs/react-native-app-intro
+```
+</code></pre>
 <p>Modal： https://github.com/react-native-community/react-native-modal</p>
 <pre><code>{
   &quot;name&quot;: &quot;rn&quot;,
@@ -102,13 +132,16 @@ Drawer： https://github.com/root-two/react-native-drawer
   &quot;scripts&quot;: {
     &quot;dev&quot;: &quot;react-native run-ios&quot;,
     &quot;start&quot;: &quot;node node_modules/react-native/local-cli/cli.js start&quot;,
-    &quot;test&quot;: &quot;jest&quot;
+    &quot;test&quot;: &quot;jest&quot;,
+    &quot;bundle-ios&quot;: &quot;node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle&quot;
   },
   &quot;dependencies&quot;: {
+    &quot;create-react-class&quot;: &quot;^15.6.3&quot;,
+    &quot;prop-types&quot;: &quot;^15.7.2&quot;,
     &quot;qs&quot;: &quot;^6.7.0&quot;,
     &quot;react&quot;: &quot;16.6.3&quot;,
     &quot;react-native&quot;: &quot;^0.57.8&quot;,
-    &quot;react-native-app-intro&quot;: &quot;^1.1.5&quot;,
+    &quot;react-native-app-intro-slider&quot;: &quot;^2.0.1&quot;,
     &quot;react-native-drawer&quot;: &quot;^2.5.1&quot;,
     &quot;react-native-gesture-handler&quot;: &quot;^1.0.12&quot;,
     &quot;react-native-modal&quot;: &quot;^10.0.0&quot;,
