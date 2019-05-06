@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React Native开发配置 | 吴先生。</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1557107113696">
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1557112373303">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
@@ -18,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1557107113696" alt="">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1557112373303" alt="">
   </a>
   <h1 class="site-title">
     吴先生。
@@ -142,6 +142,26 @@ libc++.tbd
 libz.tbd
 CoreTelephony.framework
 SystemConfiguration.framework
+</code></pre>
+<h4 id="react-native-http-cache-报错修改node_modules文件夹">react-native-http-cache 报错，修改node_modules文件夹</h4>
+<ul>
+<li>android解决方法</li>
+</ul>
+<pre><code> //FileCache cache1 = ImagePipelineFactory.getInstance().getMainDiskStorageCache();
+FileCache cache1 = ImagePipelineFactory.getInstance().getMainFileCache();
+
+//FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageDiskStorageCache();
+FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageFileCache();
+</code></pre>
+<ul>
+<li>iOS解决方法
+打开xcode 修改RCTHttpCache.xcodeproj  &gt; RCTHttpCache  &gt; RCTHttpCache.m文件</li>
+</ul>
+<pre><code>#import &quot;RCTHttpCache.h&quot;
+//TODO: ershaoyes
+//#import &quot;RCTImageLoader.h&quot;
+//#import &quot;RCTImageCache.h&quot;
+//#import &quot;RCTBridge.h&quot;
 </code></pre>
 
             </div>
