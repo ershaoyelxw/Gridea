@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React Native开发配置 | 吴先生。</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1557190345339">
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1557201042809">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
@@ -18,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1557190345339" alt="">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1557201042809" alt="">
   </a>
   <h1 class="site-title">
     吴先生。
@@ -98,6 +98,14 @@
 &lt;!--获取地址相关权限--&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
 
+&lt;!-- 这个权限用于进行网络定位--&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot;&gt;&lt;/uses-permission&gt;
+&lt;!-- 这个权限用于访问GPS定位--&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;&gt;&lt;/uses-permission&gt;
+&lt;!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位--&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;&gt;&lt;/uses-permission&gt;
+
+
 &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
 &lt;uses-permission android:name=&quot;android.permission.SYSTEM_ALERT_WINDOW&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
@@ -162,6 +170,50 @@ FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageFileCache();
 //#import &quot;RCTImageLoader.h&quot;
 //#import &quot;RCTImageCache.h&quot;
 //#import &quot;RCTBridge.h&quot;
+</code></pre>
+<h4 id="react-native-baidu-map-百度地图">react-native-baidu-map 百度地图</h4>
+<ul>
+<li>
+<p>Podfile 配置。</p>
+<p>ios目录下创建Podfile文件。命令行执行pod install</p>
+</li>
+</ul>
+<pre><code># Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'rn' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for rn
+
+  pod 'React', :path =&gt; '../node_modules/react-native', :subspecs =&gt; [
+    'Core',
+    'CxxBridge',
+    'DevSupport', 
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket', 
+    'RCTAnimation'
+  ]
+  pod 'yoga', :path =&gt; '../node_modules/react-native/ReactCommon/yoga'
+  pod 'DoubleConversion', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+  pod 'react-native-baidu-map', :podspec =&gt; '../node_modules/react-native-baidu-map/ios/react-native-baidu-map.podspec'
+
+  target 'rn-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'rnTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
 </code></pre>
 
             </div>
