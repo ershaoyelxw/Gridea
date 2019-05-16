@@ -1,0 +1,579 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nodejs puppeteer入门 | 吴先生。</title>
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1557994469840">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://ershaoyelxw.github.io/gridea.github.io">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1557994469840" alt="">
+  </a>
+  <h1 class="site-title">
+    吴先生。
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://ershaoyelxw.github.io/gridea.github.io" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://ershaoyelxw.github.io/gridea.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://ershaoyelxw.github.io/gridea.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://ershaoyelxw.github.io/gridea.github.io/post/about/" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Nodejs puppeteer入门
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-05-15 ·
+              </time>
+              
+                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/Ct8K7LqmT" class="post-tags">
+                  # nodejs
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>转载： https://aaron-bird.github.io/2019/04/22/puppeteer%E5%85%A5%E9%97%A8/</p>
+<h3 id="安装">安装</h3>
+<p>安装puppeteer时会自动下载chrome</p>
+<pre><code>yarn add puppeteer
+或
+npm i puppeteer
+</code></pre>
+<p>新建index.js后，在当前文件夹下，执行 node index.js 命令</p>
+<pre><code>const puppeteer = require('puppeteer');
+
+// 打开浏览器
+// launch方法返回一个Promise对象
+puppeteer.launch({headless: false}).then(async browser =&gt; {
+  // 打开一个页面
+  const page = await browser.newPage();
+  // 打开百度
+  await page.goto('https://www.baidu.com');
+  await page.screenshot({path: 'baidu.png'});
+  // 关闭浏览器
+  // await browser.close();
+});
+</code></pre>
+<h4 id="常用参数">常用参数:</h4>
+<p>headless 是否启用&quot;无头模式&quot;(隐藏浏览器界面), 默认为true
+devtools 是否自动打开DevTools工具</p>
+<pre><code>const puppeteer = require('puppeteer');  
+(async () =&gt; {
+  const browser = await puppeteer.launch({
+    headless: false,
+    executablePath: 'C:/chromium/chrome.exe',
+    args: [
+      '--disable-web-security', // 允许跨域
+      '--proxy-server=127.0.0.1:1080', // 代理
+    ]
+  });
+})();
+</code></pre>
+<pre><code>const puppeteer = require('puppeteer');
+(async () =&gt; {
+  const browser = await puppeteer.launch({headless: true}); //启动浏览器
+  // 启动无痕模式
+  const context = await browser.createIncognitoBrowserContext();
+  // 新建标签页
+  const page = await context.newPage();
+  // 打开目标url
+  await page.goto('https://baidu.com');
+  // 关闭无痕模式
+  await context.close();
+  // 关闭浏览器
+  await browser.close();
+})();
+</code></pre>
+<p>新建标签页
+使用browser.newPage()方法新建标签页.
+该方法返回一个Promise,包含一个Page对象作为参数.</p>
+<p>例子:</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false
+});
+const page = await browser.newPage();
+})();
+获取所有标签页
+使用browser.pages()方法获取所有可见的标签页.
+该方法返回一个Promise对象,包含一个Array作为参数.</p>
+<p>例子:</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false
+});
+console.log(await browser.pages());
+})();
+获取浏览器默认的user-agent
+使用browser.pages()方法获取所有可见的标签页.
+返回: Promise(string)</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false
+});
+console.log(await browser.userAgent());
+})();
+Page对象
+Page对象表示一个标签页</p>
+<p>访问网站
+使用page.goto(url[, options])方法访问指定的url.
+返回: Promise(Response)</p>
+<p>常用的options:</p>
+<p>timeout 超时时间
+watiUntil 何时完成页面加载
+load 触发load事件(默认)
+domcontentloaded 触发DOMContentLoaded事件
+referer Request headers头的referer参数, 优先级高于page.setExtraHTTPHeaders()
+例子:</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false,
+args: [
+// 自动打开调试工具
+'--auto-open-devtools-for-tabs'
+]
+});
+const page = await browser.newPage();
+// 暂停一会
+await page.waitFor(1000);
+await page.goto('https://www.example.com', {
+waitUntil: 'domcontentloaded',
+referer: 'https://www.test.com'
+});
+})();
+获取Cookies
+使用page.cookies([url])获取页面的cookies. 该方法返回: Promise(Array)</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false
+});
+const page = await browser.newPage();
+await page.goto('https://www.baidu.com');
+console.log(await page.cookies());
+})();
+page.cookies返回的cookies如下.其中的name为cookie名, value为cookie值:
+捕获.PNG</p>
+<p>可以用如下方法将其转换为string格式:</p>
+<p>const cookiesStr = cookies.map(cookie =&gt; <code>${cookie.name}=${cookie.value}</code>).join(&quot;;&quot;);
+设置Cookies
+1 设置单个cookies值
+使用page.setCookie(...cookies)设置cookies值.
+返回: Promise(undefined)</p>
+<p>例子:</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch();
+const page = await browser.newPage();
+await page.goto('https://www.example.com');
+await page.setCookie({
+name: 'foo',
+value: 'bar'
+}, {
+name: 'foo1',
+value: 'bar2'
+});
+// or
+await page.setCookie.apply(page, [{
+name: 'foo2',
+value: 'bar2'
+}]);
+console.log(await page.cookies());
+})();
+官方文档 setCookie</p>
+<p>注意,chrome浏览器地址栏中的&quot;查看Cookie&quot;很不靠谱.修改/删除cookie后,显示的可能还是原来的cookie.
+推荐使用document.cookie方法来查看cookie有没有更新.</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false,
+devtools: true
+});
+const page = await browser.newPage();
+await page.goto('https://www.baidu.com');
+await page.waitFor(2000);
+await page.setCookie({
+name: 'BIDUPSID',
+value: '123',
+domain: '.baidu.com',
+path: '/',
+httpOnly: false,
+secure: false,
+session: false
+});
+// 在标签页环境(上下文)中执行命令
+page.evaluate(() =&gt; console.log(document.cookie));
+})();
+删除cookie
+page.deleteCookie(...cookies)
+返回: Promise(undefined)</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false,
+devtools: true
+});
+const page = await browser.newPage();
+await page.goto('https://www.baidu.com');
+await page.deleteCookie({
+name: 'BAIDUID',
+domain: '.baidu.com',
+});
+page.evaluate(() =&gt; console.log(document.cookie));
+})();
+获取Dom
+使用page.$(selector)获取单个的Dom元素, 相当于document.querySelector
+返回: Promise(ElementHandle || null)</p>
+<p>使用page.$$(selector)获取多个的Dom元素, 相当于document.querySelectorAll
+返回: Promise(Array(ElementHandle))</p>
+<p>ElementHandle是一个Object对象,而非DOM元素.其储存了对应DOM元素的信息.</p>
+<p>获取Dom元素的文本内容
+方法1:</p>
+<p>const bodyElHandle = await page.$('body');
+const text = await page.evaluate(bodyEl =&gt; bodyEl.innerText, bodyElHandle);
+// or
+const text = await page.evaluate(bodyEl =&gt; bodyEl.textContent, bodyElHandle);
+方法2:</p>
+<p>const bodyElHandle = await page.$('body');
+// getProperty返回JSHandle对象,而非属性值<br>
+const prop = await bodyElHandle.getProperty('innerText');
+const text = await (prop.jsonValue());
+方法3:</p>
+<p>const text = await page.$eval('body', el =&gt; el.innerText);
+参考</p>
+<p>获取多个元素的文本内容:</p>
+<p>const text = await page.$$eval('div', (els) =&gt; els.map(el =&gt; el.innerText));
+参考</p>
+<p>或:</p>
+<p>const elHandles = await page.$$('div');
+const text = await page.evaluate((...els)=&gt; els.map(el =&gt; el.innerText) , ...elHandles);
+注意, 不可以直接把page.$$()方法返回的Array直接作为参数传递给page.evaluate,会报错.</p>
+<p>const elHandles = await page.$$('div');
+const text = await page.evaluate((els) =&gt; els.map(el =&gt; el.innerText), elHandles);
+// TypeError: Converting circular structure to JSON Are you passing a nested JSHandle?
+这是因为 puppeteer 的很多方法都不支持传入&quot;包含或嵌套JSHandle/ElementHandle的对象&quot;作为参数, 例如page.evaluate page.$eval等</p>
+<p>// 数组els的结构为 [ElementHandle, ElementHandle]<br>
+const elHandles = await page.$$('div');
+const text = await page.$eval('body', (body, els) =&gt; body.innerText, elHandles);
+// TypeError: Converting circular structure to JSON Are you passing a nested JSHandle?
+另外,不可以直接返回DOM对象本身</p>
+<p>const el = await page.$eval('body', el =&gt; el);
+console.log(el); // {}
+这是因为DOM对象不能被转化成JSON</p>
+<p>JSON.stringify(document.body); //  {}
+参考</p>
+<p>获取属性值
+同上</p>
+<p>Page事件
+类似DOM的addEventListener,page对象也支持响应多种事件.
+可以用page.on(事件名, 回调函数)方法来向页面添加事件.</p>
+<p>拦截request请求
+可用page.on('request', callback)方法来拦截request请求</p>
+<p>注意,必须启用&quot;请求拦截器&quot;,才能使request.abort, request.continue 和 request.respond 方法生效.
+否则会报错: Request Interception is not enabled!</p>
+<p>// 开启请求拦截器,该方法返回一个Promise
+await page.setRequestInterception(true);
+例子:</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false,
+devtools: true
+});
+const page = await browser.newPage();</p>
+<p>const url = 'https://www.baidu.com/';
+// 开启请求拦截
+await page.setRequestInterception(true);
+// 设置request事件及回调函数
+page.on('request', async (request) =&gt; {
+// 除了 https://www.baidu.com/ 之外, 不加载别的url<br>
+if (request.url() === url) {
+request.continue();
+return;
+}
+request.abort();
+});
+await page.waitFor(500)
+await page.goto(url)
+})();
+注意上面代码request.continue()后的return.
+如果对request重复调用不同的handle,则会触发错误: Request is already handled!
+例如:</p>
+<p>if (request.url() === url) {
+request.continue();
+}
+// 调用continue后没有退出,又调用了abort
+request.abort();
+拦截图片加载
+在request事件中,可用request.resourceType()方法获取request请求的文件类型,从而判断是否需要拦截该请求.
+该方法返回String, 可能返回的值有: document，stylesheet，image，media，font，script，texttrack，xhr，fetch，eventsource，websocket，manifest，other.</p>
+<p>例子, 不加载图片:</p>
+<p>const puppeteer = require('puppeteer');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false,
+devtools: true
+});
+const page = await browser.newPage();</p>
+<p>const url = 'https://www.baidu.com/';
+// 开启请求拦截
+await page.setRequestInterception(true);
+page.on('request', async (request) =&gt; {
+// 如果文件类型为image,则中断加载
+if (request.resourceType() === 'image') {
+request.abort();
+return;
+}
+// 正常加载其他类型的文件
+request.continue();
+});
+await page.waitFor(1000)
+await page.goto(url)
+})();
+也可以拦截url请求, 然后返回别的图片:</p>
+<p>const fs = require('fs-extra');
+const puppeteer = require('puppeteer');
+// 载入图像, readFileSync是一个同步函数,其作用是获取指定的文件,返回一个Buffer对象
+const <strong>IMAGE</strong> = fs.readFileSync('./img/success.jpg');
+(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: false,
+devtools: true
+});
+const page = await browser.newPage();</p>
+<p>const url = 'https://www.baidu.com/';
+await page.setRequestInterception(true);
+page.on('request', async (request) =&gt; {
+// 拦截图像资源的请求
+if (request.resourceType() === 'image') {
+// 返回替换的图像
+request.respond({
+// http状态码
+state: 200,
+// 返回的文件类型
+contentType: 'image/jpeg',
+// 返回文件的具体内容, 接受String或Buffer作为参数
+body: <strong>IMAGE</strong>
+})
+return;
+}
+//不处理其他资源的请用
+request.continue();
+});
+await page.waitFor(1000)
+await page.goto(url)
+})();
+文档 request.respond</p>
+<p>注意: request.respond方法不支持返回dataURL类型的数据.</p>
+<p>其他
+下载图像
+puppeteer没有直接提供一个API来导出图像,需要用别的方法下载图片.</p>
+<p>方法1,用axios下载图像:</p>
+<p>const fs = require('fs-extra');
+const puppeteer = require('puppeteer');
+const axios = require('axios');</p>
+<p>const dwImage = async (url, headers) =&gt; {
+// 下载图片
+const response = await axios.get(url, {
+headers,
+responseType: 'arraybuffer'
+});
+// 储存图片
+fs.writeFileSync('./logo.png', response.data);
+};</p>
+<p>(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: true,
+devtools: true,
+args: [
+'--proxy-server=&quot;direct://&quot;',
+'--proxy-bypass-list=*'
+]
+});
+const url = 'https://www.baidu.com/';
+const page = await browser.newPage();
+await page.goto(url);
+// 获取logo的src地址
+const imageUrl = await page.$eval('#lg img', (imgEl) =&gt; imgEl.src);
+dwImage(imageUrl, {
+referer: url,
+'user-agent': await browser.userAgent()
+});
+browser.close();
+})();
+方法2,使用canvas导出dataURL:</p>
+<p>const fs = require('fs-extra');
+const puppeteer = require('puppeteer');</p>
+<p>// get dataURL from image element
+const getDataURLFromImg = async (imgEl) =&gt; {
+console.log(imgEl);
+const canvas = document.createElement('canvas');
+// naturalWidth返回图像的原始尺寸
+canvas.width = imgEl.naturalWidth;
+canvas.height = imgEl.naturalHeight;</p>
+<p>const ctx = canvas.getContext('2d');
+ctx.drawImage(imgEl, 0, 0);
+return canvas.toDataURL('image/jpeg', 1);
+}</p>
+<p>// dataURL to Buffer
+const parseDataURL = (dataURL) =&gt; {
+const matches = dataURL.match(/^data:(.+);base64,(.+)$/);
+if (matches.length !== 3) {
+throw new Error('Could not parse data URL.');
+}
+return {
+mime: matches[1],
+buffer: Buffer.from(matches[2], 'base64')
+};
+};</p>
+<p>const dwImage = async (elementHandle, page, path) =&gt; {
+const dataURL = await page.evaluate(getDataURLFromImg, elementHandle)
+const {
+buffer
+} = parseDataURL(dataURL);
+fs.writeFileSync(path, buffer, 'base64');
+};</p>
+<p>(async () =&gt; {
+const browser = await puppeteer.launch({
+headless: true,
+devtools: true,
+args: [
+'--proxy-server=&quot;direct://&quot;',
+'--proxy-bypass-list=*',
+// img标签可以跨域,但是canvas不行.
+//关闭跨域限制
+'-–disable-web-security',
+]
+});
+const url = 'https://www.baidu.com/';
+const page = await browser.newPage();
+await page.goto(url);
+// 获取logo的src地址
+const imgElHandle = await page.$('#lg img');
+await dwImage(imgElHandle, page, './logo.jpg');
+browser.close();
+})();
+参考</p>
+<p>方法2的一些注意事项:
+1 canvas不支持跨域
+虽然可以用drawImage加载跨域的图像, 但用toDataURL导出dataURL时会报错: Tainted canvases may not be exported. 需要在启动browser时允许跨域</p>
+<p>const browser = await puppeteer.launch({
+args: [
+'-–disable-web-security',
+]
+}
+如果服务器端允许,也可以通过配置img的crossorigin属性来支持跨域.</p>
+<p>imgEl.setAttribute('crossorigin', 'Anonymous');
+MDN CORS settings attributes</p>
+<p>2 toDataURL导出图像的默认格式为png
+调用toDataURL时,如果不传入第一个参数,则默认导出格式为&quot;image/png&quot;,这可能会导致图片变大. 如果不需要导出png,则可以设置为jpg/webp</p>
+<p>canvas.toDataURL('image/jpeg', 1);
+MDN toDataUR</p>
+<p>3 获取图像的原始大小
+img.width/height获取到的是img标签的大小,可用HTML5新增的naturalWidth和naturalHeight获取img图像的原始大小.</p>
+<p>canvas.width = imgEl.naturalWidth;
+canvas.height = imgEl.naturalHeight;
+Chrome 启动参数
+参数	用途
+--disable-web-security	允许跨域
+--proxy-server=127.0.0.1:1080	代理
+--proxy-bypass-list=*	不走代理的链接
+--disable-gpu	禁用GUP
+--ignore-certificate-errors	忽略证书错误
+--auto-open-devtools-for-tabs	自动打开调试工具
+更多配置参数详解 List of Chromium Command Line Switches « Peter Beverloo</p>
+<p>error
+UnhandledPromiseRejectionWarning: TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+headless参数为true时可能会触发该bug</p>
+<p>例如:</p>
+<p>puppeteer.launch({headless: true})
+// or headless的默认值就是true
+puppeteer.launch()
+解决办法,如果操作系统是windows7, 则使用如下参数创建 browser:</p>
+<p>const browser = await puppeteer.launch({
+headless: true,
+args: [
+// 不使用任何代理
+'--proxy-server=&quot;direct://&quot;',
+'--proxy-bypass-list=*'
+]
+});</p>
+
+            </div>
+          </article>
+        </div>
+    
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">吴先生。</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
