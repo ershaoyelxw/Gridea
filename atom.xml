@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ershaoyelxw.github.io/gridea.github.io</id>
     <title>吴先生。</title>
-    <updated>2019-05-30T10:23:37.238Z</updated>
+    <updated>2019-05-30T10:26:03.922Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ershaoyelxw.github.io/gridea.github.io"/>
     <link rel="self" href="https://ershaoyelxw.github.io/gridea.github.io/atom.xml"/>
@@ -23,7 +23,8 @@
 <pre><code>docker images
 </code></pre>
 <h3 id="运行镜像">运行镜像</h3>
-<pre><code># docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 -v /User/mac/workspace/dockerworkspace:/www/wwwroot 镜像名称
+<p>bt 镜像名</p>
+<pre><code>docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 -v /User/mac/workspace/dockerworkspace:/www/wwwroot bt
 
 -i: 以交互模式运行容器；
 -t: 为容器重新分配一个伪输入终端；
@@ -38,6 +39,7 @@ docker run
 <h3 id="进入容器">进入容器</h3>
 <pre><code># bt: 容器名称
 # /bin/bash: 使用bash命令行
+
 docker exec -it baota /bin/bash
 </code></pre>
 <h3 id="保存对容器的修改">保存对容器的修改</h3>
@@ -54,7 +56,7 @@ docker stop $(docker ps -a -q) //停止所有容器
 docker rm $(docker ps -a -a) //删除所有容器
 </code></pre>
 <h3 id="mac-80端口被占用">mac 80端口被占用</h3>
-<p>Docker Error: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error</p>
+<h4 id="docker-error-error-starting-userland-proxy-bind-for-000080-unexpected-error">Docker Error: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error</h4>
 <pre><code>sudo apachectl stop
 </code></pre>
 ]]></content>

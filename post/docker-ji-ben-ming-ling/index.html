@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker 基本命令 | 吴先生。</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1559211814450">
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1559211962893">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
@@ -18,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1559211814450" alt="">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1559211962893" alt="">
   </a>
   <h1 class="site-title">
     吴先生。
@@ -93,7 +93,8 @@
 <pre><code>docker images
 </code></pre>
 <h3 id="运行镜像">运行镜像</h3>
-<pre><code># docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 -v /User/mac/workspace/dockerworkspace:/www/wwwroot 镜像名称
+<p>bt 镜像名</p>
+<pre><code>docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 -v /User/mac/workspace/dockerworkspace:/www/wwwroot bt
 
 -i: 以交互模式运行容器；
 -t: 为容器重新分配一个伪输入终端；
@@ -108,6 +109,7 @@ docker run
 <h3 id="进入容器">进入容器</h3>
 <pre><code># bt: 容器名称
 # /bin/bash: 使用bash命令行
+
 docker exec -it baota /bin/bash
 </code></pre>
 <h3 id="保存对容器的修改">保存对容器的修改</h3>
@@ -124,7 +126,7 @@ docker stop $(docker ps -a -q) //停止所有容器
 docker rm $(docker ps -a -a) //删除所有容器
 </code></pre>
 <h3 id="mac-80端口被占用">mac 80端口被占用</h3>
-<p>Docker Error: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error</p>
+<h4 id="docker-error-error-starting-userland-proxy-bind-for-000080-unexpected-error">Docker Error: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error</h4>
 <pre><code>sudo apachectl stop
 </code></pre>
 
