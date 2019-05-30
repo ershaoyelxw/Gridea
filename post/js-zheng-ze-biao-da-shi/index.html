@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JS-正则表达式 | 吴先生。</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1559133365141">
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1559211814450">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
@@ -18,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1559133365141" alt="">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1559211814450" alt="">
   </a>
   <h1 class="site-title">
     吴先生。
@@ -118,7 +118,7 @@
 <p>8 由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w{3,20}$</p>
 <p>9 中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</p>
 <p>10 中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</p>
-<p>11 可以输入含有^%&amp;’,;=?\”等字符：[^%&’,;=?\x22]+</p>
+<p>11 可以输入含有^%&amp;’,;=?<span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \” at position 1: \̲”̲等字符：[^%&amp;’,;=?'>\”等字符：[^%&amp;’,;=?</span>\x22]+</p>
 <p>12 禁止输入含有~的字符：[^~\x22]+</p>
 <p>三、特殊需求表达式
 1 Email地址：^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$</p>
@@ -150,7 +150,7 @@
 <p>27 双字节字符：[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p>
 <p>28 空白行的正则表达式：\n\s*\r (可以用来删除空白行)</p>
 <p>29 HTML标记的正则表达式：&lt;(\S?)[^&gt;]&gt;.?&lt;/\1&gt;|&lt;.? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p>
-<p>30 首尾空白字符的正则表达式：^\s|\s或(^\s)|(\s) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p>
+<p>30 首尾空白字符的正则表达式：^\s|\s<span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \s at position 4: 或(^\̲s̲)|(\s'>或(^\s)|(\s</span>) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p>
 <p>31 腾讯QQ号：[1-9][0-9]{4,} (腾讯QQ号从10000开始)</p>
 <p>32 中国邮政编码：[1-9]\d{5}(?!\d) (中国邮政编码为6位数字)</p>
 <p>33 IP地址：\d+.\d+.\d+.\d+ (提取IP地址时有用)</p>

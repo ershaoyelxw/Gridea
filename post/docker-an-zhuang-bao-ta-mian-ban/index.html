@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Javascript 解决XLSX读取excel文件，单元格读取时间格式后变成浮点型 | 吴先生。</title>
+<title>docker 安装宝塔面板 | 吴先生。</title>
 <link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1559211814450">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
@@ -72,24 +72,38 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Javascript 解决XLSX读取excel文件，单元格读取时间格式后变成浮点型
+              docker 安装宝塔面板
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-05-29 ·
+                · 2019-05-30 ·
               </time>
               
-                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/qoqgOifuy" class="post-tags">
-                  # Javascript
+                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/FUgPJNxv_" class="post-tags">
+                  # docker
                 </a>
               
             </div>
             
             <div class="post-content">
-              <p>XLSX读取excel文件，单元格读取时间格式后变成浮点型</p>
-<p>解决方法：</p>
-<pre><code>var value = 42948;
-var date = new Date(1900, 0, value - 1);
+              <p>docker 安装宝塔面板</p>
+<h3 id="docker-安装宝塔面板">docker 安装宝塔面板</h3>
+<ul>
+<li>把hub.docker.com上centos系统镜像拉取下来</li>
+</ul>
+<pre><code>docker pull centos
+</code></pre>
+<ul>
+<li>创建自己的容器</li>
+</ul>
+<pre><code>docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 --privileged=true -v /User/mac/workspace/dockerworkspace:/www/wwwroot centos
+</code></pre>
+<ul>
+<li>进入容器</li>
+</ul>
+<p>bt: 容器名称
+/bin/bash: 直接使用bash命令行</p>
+<pre><code>docker exec -it bt /bin/bash
 </code></pre>
 
             </div>
@@ -99,9 +113,9 @@ var date = new Date(1900, 0, value - 1);
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa-pei-zhi">
+            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/chrome-kai-fa-gu-ge-liu-lan-qi-cha-jian-yin-yong-zi-ti-bao">
               <h3 class="post-title">
-                React Native开发配置
+                chrome 开发谷歌浏览器插件 引用字体包
               </h3>
             </a>
           </div>  

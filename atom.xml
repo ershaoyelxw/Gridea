@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ershaoyelxw.github.io/gridea.github.io</id>
+    <title>吴先生。</title>
+    <updated>2019-05-30T10:23:37.238Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://ershaoyelxw.github.io/gridea.github.io"/>
+    <link rel="self" href="https://ershaoyelxw.github.io/gridea.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png</logo>
+    <icon>https://ershaoyelxw.github.io/gridea.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2019, 吴先生。</rights>
+    <entry>
+        <title type="html"><![CDATA[docker 基本命令]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/docker-ji-ben-ming-ling</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/docker-ji-ben-ming-ling">
+        </link>
+        <updated>2019-05-30T10:12:59.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="拉取镜像">拉取镜像</h3>
+<pre><code>docker pull centos
+</code></pre>
+<h3 id="查看镜像">查看镜像</h3>
+<pre><code>docker images
+</code></pre>
+<h3 id="运行镜像">运行镜像</h3>
+<pre><code># docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 -v /User/mac/workspace/dockerworkspace:/www/wwwroot 镜像名称
+
+-i: 以交互模式运行容器；
+-t: 为容器重新分配一个伪输入终端；
+-d: 后台运行容器，并返回容器ID；
+--name=&quot;bt&quot;: 为容器指定一个名称；
+-p: 端口映射，格式为：主机(宿主)端口:容器端口, 可以多次使用
+-v:挂载目录   本机目录:容器目录(/Users/mac/workspace/dockerworkspace:/www/wwwroot)
+
+docker run
+
+</code></pre>
+<h3 id="进入容器">进入容器</h3>
+<pre><code># bt: 容器名称
+# /bin/bash: 使用bash命令行
+docker exec -it baota /bin/bash
+</code></pre>
+<h3 id="保存对容器的修改">保存对容器的修改</h3>
+<pre><code>docker commit &lt;container_id&gt; &lt;image_name&gt;
+</code></pre>
+<h3 id="查看所有容器">查看所有容器</h3>
+<pre><code>docker ps -a //查看所有容器
+docker ps -a -q //查看所有容器ID
+docker ps //查看正在运行容器
+</code></pre>
+<h3 id="停止运行容器">停止运行容器</h3>
+<pre><code>docker stop 容器ID
+docker stop $(docker ps -a -q) //停止所有容器
+docker rm $(docker ps -a -a) //删除所有容器
+</code></pre>
+<h3 id="mac-80端口被占用">mac 80端口被占用</h3>
+<p>Docker Error: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error</p>
+<pre><code>sudo apachectl stop
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[docker 安装宝塔面板]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/docker-an-zhuang-bao-ta-mian-ban</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/docker-an-zhuang-bao-ta-mian-ban">
+        </link>
+        <updated>2019-05-30T10:08:41.000Z</updated>
+        <content type="html"><![CDATA[<p>docker 安装宝塔面板</p>
+<h3 id="docker-安装宝塔面板">docker 安装宝塔面板</h3>
+<ul>
+<li>把hub.docker.com上centos系统镜像拉取下来</li>
+</ul>
+<pre><code>docker pull centos
+</code></pre>
+<ul>
+<li>创建自己的容器</li>
+</ul>
+<pre><code>docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 --privileged=true -v /User/mac/workspace/dockerworkspace:/www/wwwroot centos
+</code></pre>
+<ul>
+<li>进入容器</li>
+</ul>
+<p>bt: 容器名称
+/bin/bash: 直接使用bash命令行</p>
+<pre><code>docker exec -it bt /bin/bash
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[chrome 开发谷歌浏览器插件 引用字体包]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/chrome-kai-fa-gu-ge-liu-lan-qi-cha-jian-yin-yong-zi-ti-bao</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/chrome-kai-fa-gu-ge-liu-lan-qi-cha-jian-yin-yong-zi-ti-bao">
+        </link>
+        <updated>2019-05-30T01:07:38.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>var icons = document.createElement('style');
+  icons.type = 'text/css';
+  icons.textContent = '@font-face { font-family: ct-icons; src: url(&quot;' + chrome.extension.getURL('js/ct-ui/fonts/' + 'ct-icons.woff') + '&quot;),url(&quot;' +chrome.extension.getURL('js/ct-ui/fonts/' + 'ct-icons.ttf') + '&quot;);
+  font-weight: 400;font-style: normal }';
+  document.head.appendChild(icons);
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Javascript 解决XLSX读取excel文件，单元格读取时间格式后变成浮点型]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/javascript-jie-jue-xlsx-du-qu-excel-wen-jian-dan-yuan-ge-du-qu-shi-jian-ge-shi-hou-bian-cheng-fu-dian-xing</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/javascript-jie-jue-xlsx-du-qu-excel-wen-jian-dan-yuan-ge-du-qu-shi-jian-ge-shi-hou-bian-cheng-fu-dian-xing">
+        </link>
+        <updated>2019-05-29T12:32:06.000Z</updated>
+        <content type="html"><![CDATA[<p>XLSX读取excel文件，单元格读取时间格式后变成浮点型</p>
+<p>解决方法：</p>
+<pre><code>var value = 42948;
+var date = new Date(1900, 0, value - 1);
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React Native开发配置]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa-pei-zhi</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa-pei-zhi">
+        </link>
+        <updated>2019-05-05T07:16:51.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="安卓权限配置">安卓权限配置</h4>
+<ul>
+<li>android/app/src/AndroidMainfest.xml</li>
+</ul>
+<pre><code>&lt;!--获取读写外置存储权限--&gt;
+&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
+&lt;!--获取相机权限--&gt;
+&lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
+&lt;!--获取地址相关权限--&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+
+&lt;!-- 这个权限用于进行网络定位--&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot;&gt;&lt;/uses-permission&gt;
+&lt;!-- 这个权限用于访问GPS定位--&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;&gt;&lt;/uses-permission&gt;
+&lt;!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位--&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;&gt;&lt;/uses-permission&gt;
+
+
+&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.SYSTEM_ALERT_WINDOW&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.FLASHLIGHT&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+</code></pre>
+<h3 id="安卓键盘弹出会导致底部撑起来解决方法">安卓键盘弹出会导致底部撑起来，解决方法</h3>
+<pre><code>在android &gt; app &gt; src &gt; main &gt; AndroidManifest.xml，activity中添加
+</code></pre>
+<pre><code>默认： android:windowSoftInputMode=&quot;adjustResize&quot;
+修改： android:windowSoftInputMode=&quot;stateAlwaysHidden|adjustPan&quot;
+</code></pre>
+<h3 id="ios权限配置">iOS权限配置</h3>
+<ul>
+<li>ios调用录视频需要添加麦克风权限</li>
+</ul>
+<pre><code>Privacy - Microphone Usage Description  使用麦克风
+Privacy - Bluetooth Peripheral Usage Description 使用蓝牙
+Privacy - Camera Usage Description 获取拍照
+Privacy - Location Usage Description 获取位置
+Privacy - Location When In Use Usage Description 获取位置
+Privacy - Photo Library Additions Usage Description 获取相册
+Privacy - Photo Library Usage Description 获取相册
+</code></pre>
+<h4 id="微信sdk">微信SDK</h4>
+<ul>
+<li>ios调用微信SDK需要在info.plist添加LSApplicationQueriesSchemes</li>
+</ul>
+<pre><code>LSApplicationQueriesSchemes Array 
+item 0   String    weixin
+item 1   String    wechat
+</code></pre>
+<ul>
+<li>xcode项目中的Info配置URL Types</li>
+</ul>
+<pre><code>URL Types
+Identifier填写:  weixin
+URL Schemes填写微信appid:  appid
+上传对应weixin APP image
+</code></pre>
+<ul>
+<li>xcode项目中的Build Phases，Link Binary With Libraries添加下面5个文件</li>
+</ul>
+<pre><code>libsqlite3.0.tbd
+libc++.tbd
+libz.tbd
+CoreTelephony.framework
+SystemConfiguration.framework
+</code></pre>
+<h4 id="react-native-http-cache-报错修改node_modules文件夹">react-native-http-cache 报错，修改node_modules文件夹</h4>
+<ul>
+<li>android解决方法</li>
+</ul>
+<pre><code> //FileCache cache1 = ImagePipelineFactory.getInstance().getMainDiskStorageCache();
+FileCache cache1 = ImagePipelineFactory.getInstance().getMainFileCache();
+
+//FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageDiskStorageCache();
+FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageFileCache();
+</code></pre>
+<ul>
+<li>iOS解决方法
+打开xcode 修改RCTHttpCache.xcodeproj  &gt; RCTHttpCache  &gt; RCTHttpCache.m文件</li>
+</ul>
+<pre><code>#import &quot;RCTHttpCache.h&quot;
+//TODO: ershaoyes
+//#import &quot;RCTImageLoader.h&quot;
+//#import &quot;RCTImageCache.h&quot;
+//#import &quot;RCTBridge.h&quot;
+</code></pre>
+<h4 id="react-native-scrollable-tab-view嵌套在scrollview里ios显示正常在安卓上无法显示">react-native-scrollable-tab-view嵌套在ScrollView里IOS显示正常，在安卓上无法显示</h4>
+<pre><code>Android端使用了ViewPagerAndroid，全局搜索Platform.OS === 'ios'，修改为 true
+</code></pre>
+<pre><code>Platform.OS === 'ios'
+</code></pre>
+<h4 id="react-native-baidu-map-百度地图">react-native-baidu-map 百度地图</h4>
+<ul>
+<li>
+<p>Podfile 配置。</p>
+<p>ios目录下创建Podfile文件。命令行执行pod install</p>
+</li>
+</ul>
+<pre><code># Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'rn' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for rn
+
+  pod 'React', :path =&gt; '../node_modules/react-native', :subspecs =&gt; [
+    'Core',
+    'CxxBridge',
+    'DevSupport', 
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket', 
+    'RCTAnimation'
+  ]
+  pod 'yoga', :path =&gt; '../node_modules/react-native/ReactCommon/yoga'
+  pod 'DoubleConversion', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+  pod 'react-native-baidu-map', :podspec =&gt; '../node_modules/react-native-baidu-map/ios/react-native-baidu-map.podspec'
+
+  target 'rn-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'rnTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IOS ICON 工具]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/ios-icon-gong-ju</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/ios-icon-gong-ju">
+        </link>
+        <updated>2019-05-02T16:41:22.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>
+<p><a href="https://icon.wuruihong.com/#/ios">在线生成icon图片的工具：https://icon.wuruihong.com/#/ios</a></p>
+</li>
+<li>
+<p>生成icon和启动图，appstore下载 Appicons and Launchimages Lite 使用。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React-Native ios打包]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-ios-da-bao</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-ios-da-bao">
+        </link>
+        <updated>2019-04-30T01:04:20.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="创建证书的个人证书和公司证书">创建证书的个人证书和公司证书</h3>
+<h3 id="生成bundle文件夹">生成bundle文件夹</h3>
+<ul>
+<li>在Xcode自己项目IOS文件夹下新建一个bundle文件夹</li>
+</ul>
+<ol>
+<li>--entry-file  ios或者android入口的js名称，如index.js</li>
+<li>--platform  平台名称(iOS、Android)</li>
+<li>--dev  设置为false，将会对JavaScript代码进行优化处理。</li>
+<li>--bundle-output 生成的jsbundle文件的名称，如./ios/bundle/index.jsbundle</li>
+<li>--assets-dest 图片以及其他资源存放的目录，如./ios/bundle</li>
+</ol>
+<ul>
+<li>在项目package.json文件script添加命令</li>
+</ul>
+<pre><code>react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle
+</code></pre>
+<ul>
+<li>执行命令进行打包</li>
+</ul>
+<pre><code>npm run bundle-ios
+</code></pre>
+<p><strong>打包生成完成之后，在IOS目录下看到一个bundle目录，这个目录就是bundle生成的离线资源。</strong></p>
+<h3 id="在xcode导入bundle文件夹">在Xcode导入bundle文件夹</h3>
+<ul>
+<li>使用Create folder references的方式添加文件夹.</li>
+<li>在Xcode项目文件夹右键</li>
+<li>Add Files to &quot;项目名&quot;</li>
+<li>选择bundle文件,在option中选择Create folder references</li>
+</ul>
+<h3 id="设置appdelegatem">设置AppDelegate.m</h3>
+<ul>
+<li>使用Xcode打开项目，在AppDelegate.m文件里添加生产环境配置</li>
+</ul>
+<pre><code>// 测试环境：模拟器
+jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;jsbundle&quot;];
+
+// 生产环境：真机
+jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;bundle/index&quot; withExtension:@&quot;jsbundle&quot;];
+</code></pre>
+<h3 id="开始打包">开始打包</h3>
+<ul>
+<li>Xcode &gt; Product &gt; Scheme &gt; Edit Scheme, 把项目debug状态改成release状态</li>
+<li>在Xcode左上角选择 Generic iOS Device ，修改Version、Build</li>
+<li>Xcode &gt; Product &gt; clean，然后选择Archice</li>
+</ul>
+<p><strong>生成.ipa文件方式有多种，Archice, 将成的.app文件拖到iTunes里面生成</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React-Native 开发]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa">
+        </link>
+        <updated>2019-04-29T11:21:49.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="样式表">样式表</h4>
+<ul>
+<li><a href="https://www.jianshu.com/p/753885f243b3">https://www.jianshu.com/p/753885f243b3</a></li>
+<li><a href="https://www.jianshu.com/p/c59c6890edff">https://www.jianshu.com/p/c59c6890edff</a></li>
+</ul>
+<h4 id="模块合集">模块合集</h4>
+<ul>
+<li>
+<p>BUG合集： <a href="https://www.jianshu.com/p/a6f97bdc042c">https://www.jianshu.com/p/a6f97bdc042c</a></p>
+</li>
+<li>
+<p>下拉加载更多：</p>
+<ul>
+<li>ios： <a href="https://github.com/react-native-studio/react-native-MJRefresh">https://github.com/react-native-studio/react-native-MJRefresh</a></li>
+<li>android： <a href="https://github.com/react-native-studio/react-native-SmartRefreshLayout">https://github.com/react-native-studio/react-native-SmartRefreshLayout</a></li>
+</ul>
+</li>
+<li>
+<p>颜色渐变： <a href="https://github.com/react-native-community/react-native-linear-gradient">https://github.com/react-native-community/react-native-linear-gradient</a></p>
+<ul>
+<li><a href="https://blog.csdn.net/koufulong/article/details/81779323?utm_source=blogxgwz0">https://blog.csdn.net/koufulong/article/details/81779323?utm_source=blogxgwz0</a></li>
+</ul>
+</li>
+<li>
+<p>官方推荐地图： <a href="https://github.com/react-native-community/react-native-maps/tree/1e71a21f39e7b88554852951f773c731c94680c9">https://github.com/react-native-community/react-native-maps/tree/1e71a21f39e7b88554852951f773c731c94680c9</a></p>
+</li>
+<li>
+<p>百度地图： <a href="https://github.com/lovebing/react-native-baidu-map/issues">https://github.com/lovebing/react-native-baidu-map/issues</a></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/eceb7e66fa5e?appinstall=0">https://www.jianshu.com/p/eceb7e66fa5e?appinstall=0</a></li>
+</ul>
+</li>
+<li>
+<p>Toast： <a href="https://github.com/magicismight/react-native-root-toast">https://github.com/magicismight/react-native-root-toast</a></p>
+</li>
+<li>
+<p>路由： <a href="https://github.com/aksonov/react-native-router-flux">https://github.com/aksonov/react-native-router-flux</a></p>
+</li>
+<li>
+<p>Dialog： <a href="https://github.com/jacklam718/react-native-popup-dialog">https://github.com/jacklam718/react-native-popup-dialog</a></p>
+</li>
+<li>
+<p>ICON： <a href="https://github.com/oblador/react-native-vector-icons">https://github.com/oblador/react-native-vector-icons</a></p>
+</li>
+<li>
+<p>轮播： <a href="https://github.com/archriss/react-native-snap-carousel">https://github.com/archriss/react-native-snap-carousel</a></p>
+</li>
+<li>
+<p>Drawer： <a href="https://github.com/root-two/react-native-drawer">https://github.com/root-two/react-native-drawer</a></p>
+</li>
+<li>
+<p>tab： <a href="https://github.com/react-native-community/react-native-tab-view">https://github.com/react-native-community/react-native-tab-view</a></p>
+</li>
+<li>
+<p>swiper： <a href="https://github.com/leecade/react-native-swiper">https://github.com/leecade/react-native-swiper</a></p>
+</li>
+<li>
+<p>扫码： <a href="https://github.com/MarnoDev/AC-QRCode-RN">https://github.com/MarnoDev/AC-QRCode-RN  </a></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/b46328ba1b33">https://www.jianshu.com/p/b46328ba1b33</a></li>
+</ul>
+</li>
+<li>
+<p>权限： <a href="https://github.com/yonahforst/react-native-permissions">https://github.com/yonahforst/react-native-permissions</a></p>
+</li>
+<li>
+<p>panel： <a href="https://github.com/octopitus/rn-sliding-up-panel">https://github.com/octopitus/rn-sliding-up-panel</a></p>
+</li>
+<li>
+<p>骨架屏： <a href="https://github.com/mfrachet/rn-placeholder">https://github.com/mfrachet/rn-placeholder</a></p>
+</li>
+<li>
+<p>html： <a href="https://github.com/jsdf/react-native-htmlview">https://github.com/jsdf/react-native-htmlview</a></p>
+</li>
+<li>
+<p>头部图片下拉： <a href="https://github.com/bamlab/react-native-image-header-scroll-view">https://github.com/bamlab/react-native-image-header-scroll-view</a></p>
+</li>
+<li>
+<p>pop-up： <a href="https://github.com/instea/react-native-popup-menu">https://github.com/instea/react-native-popup-menu</a></p>
+</li>
+<li>
+<p>启动屏： <a href="https://github.com/react-native-component/react-native-smart-splash-screen">https://github.com/react-native-component/react-native-smart-splash-screen</a></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/4540ac17dfd4">https://www.jianshu.com/p/4540ac17dfd4</a></li>
+<li><a href="https://www.jianshu.com/p/56562e5a9396?from=timeline&amp;isappinstalled=0">https://www.jianshu.com/p/56562e5a9396?from=timeline&amp;isappinstalled=0</a></li>
+</ul>
+</li>
+<li>
+<p>webview相互调用函数： <a href="https://github.com/pinqy520/react-native-webview-invoke">https://github.com/pinqy520/react-native-webview-invoke</a></p>
+</li>
+<li>
+<p>webview： <a href="https://github.com/react-native-community/react-native-webview">https://github.com/react-native-community/react-native-webview</a></p>
+</li>
+<li>
+<p>tab： <a href="https://github.com/ptomasroos/react-native-scrollable-tab-view">https://github.com/ptomasroos/react-native-scrollable-tab-view</a></p>
+<ul>
+<li>https://www.jianshu.com/p/a730190994c2</li>
+</ul>
+</li>
+<li>
+<p>grid： <a href="https://github.com/saleel/react-native-super-grid">https://github.com/saleel/react-native-super-grid</a></p>
+</li>
+<li>
+<p>chart： <a href="https://github.com/wuxudong/react-native-charts-wrapper">https://github.com/wuxudong/react-native-charts-wrapper</a></p>
+</li>
+<li>
+<p>imgpicket： <a href="https://github.com/mg365/react-native-customized-image-picker">https://github.com/mg365/react-native-customized-image-picker</a></p>
+<ul>
+<li><a href="https://github.com/react-native-community/react-native-image-picker">https://github.com/react-native-community/react-native-image-picker</a></li>
+<li><a href="https://www.jianshu.com/p/527f48ebc26a">https://www.jianshu.com/p/527f48ebc26a</a></li>
+</ul>
+</li>
+<li>
+<p>清理缓存： <a href="https://github.com/reactnativecn/react-native-http-cache">https://github.com/reactnativecn/react-native-http-cache</a></p>
+<ul>
+<li><a href="https://www.cnblogs.com/pengsi/p/7810439.html">https://www.cnblogs.com/pengsi/p/7810439.html</a></li>
+<li><a href="https://www.jianshu.com/p/395f752018fa">https://www.jianshu.com/p/395f752018fa</a></li>
+<li><a href="https://www.jianshu.com/p/b99d3a46947f">https://www.jianshu.com/p/b99d3a46947f</a></li>
+</ul>
+</li>
+<li>
+<p>微信模块： <a href="https://github.com/yorkie/react-native-wechat">https://github.com/yorkie/react-native-wechat</a></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/6a792118fae4">https://www.jianshu.com/p/6a792118fae4</a></li>
+</ul>
+</li>
+<li>
+<p>fs： <a href="https://github.com/itinance/react-native-fs">https://github.com/itinance/react-native-fs</a></p>
+</li>
+<li>
+<p>Modal： <a href="https://github.com/react-native-community/react-native-modal">https://github.com/react-native-community/react-native-modal</a></p>
+</li>
+<li>
+<p>踩坑集合： <a href="https://github.com/ChenYilong/iOS9AdaptationTips">https://github.com/ChenYilong/iOS9AdaptationTips</a></p>
+</li>
+<li>
+<p>自动清理计时器模块： <a href="https://github.com/react-native-component/react-native-smart-timer-enhance">https://github.com/react-native-component/react-native-smart-timer-enhance</a></p>
+</li>
+<li>
+<p>服务器发送事件： <a href="https://github.com/jordanbyron/react-native-event-source">https://github.com/jordanbyron/react-native-event-source</a></p>
+</li>
+<li>
+<p>安卓打包教程： <a href="https://www.jianshu.com/p/b7d2d93a6255">https://www.jianshu.com/p/b7d2d93a6255</a></p>
+</li>
+</ul>
+<h4 id="packagejson">package.json</h4>
+<pre><code>{
+  &quot;name&quot;: &quot;rn&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;react-native run-ios&quot;,
+    &quot;start&quot;: &quot;node node_modules/react-native/local-cli/cli.js start&quot;,
+    &quot;test&quot;: &quot;jest&quot;,
+    &quot;bundle-ios&quot;: &quot;node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;create-react-class&quot;: &quot;^15.6.3&quot;,
+    &quot;prop-types&quot;: &quot;^15.7.2&quot;,
+    &quot;qs&quot;: &quot;^6.7.0&quot;,
+    &quot;react&quot;: &quot;16.6.3&quot;,
+    &quot;react-native&quot;: &quot;^0.57.8&quot;,
+    &quot;react-native-app-intro-slider&quot;: &quot;^2.0.1&quot;,
+    &quot;react-native-drawer&quot;: &quot;^2.5.1&quot;,
+    &quot;react-native-fs&quot;: &quot;^2.13.3&quot;,
+    &quot;react-native-gesture-handler&quot;: &quot;^1.0.12&quot;,
+    &quot;react-native-htmlview&quot;: &quot;^0.14.0&quot;,
+    &quot;react-native-http-cache&quot;: &quot;^0.2.0&quot;,
+    &quot;react-native-image-picker&quot;: &quot;^0.28.1&quot;,
+    &quot;react-native-modal&quot;: &quot;^10.0.0&quot;,
+    &quot;react-native-permissions&quot;: &quot;^1.1.1&quot;,
+    &quot;react-native-popup-dialog&quot;: &quot;^0.18.2&quot;,
+    &quot;react-native-root-toast&quot;: &quot;^3.0.2&quot;,
+    &quot;react-native-router-flux&quot;: &quot;^4.0.6&quot;,
+    &quot;react-native-smart-timer-enhance&quot;: &quot;^1.0.3&quot;,
+    &quot;react-native-snap-carousel&quot;: &quot;^3.7.5&quot;,
+    &quot;react-native-splash-screen&quot;: &quot;^3.2.0&quot;,
+    &quot;react-native-swiper&quot;: &quot;^1.5.14&quot;,
+    &quot;react-native-vector-icons&quot;: &quot;^6.4.2&quot;,
+    &quot;react-native-wechat&quot;: &quot;^1.9.10&quot;,
+    &quot;redux&quot;: &quot;^4.0.1&quot;,
+    &quot;redux-thunk&quot;: &quot;^2.3.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;babel-jest&quot;: &quot;23.6.0&quot;,
+    &quot;jest&quot;: &quot;23.6.0&quot;,
+    &quot;metro-react-native-babel-preset&quot;: &quot;0.51.1&quot;,
+    &quot;react-redux&quot;: &quot;^6.0.0&quot;,
+    &quot;react-test-renderer&quot;: &quot;16.6.3&quot;,
+    &quot;redux-devtools&quot;: &quot;^3.5.0&quot;,
+    &quot;redux-logger&quot;: &quot;^3.0.6&quot;
+  },
+  &quot;jest&quot;: {
+    &quot;preset&quot;: &quot;react-native&quot;
+  }
+}
+
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS-多行文本溢出显示省略号(…)全攻略]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/css-duo-xing-wen-ben-yi-chu-xian-shi-sheng-lue-hao-quan-gong-lue</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/css-duo-xing-wen-ben-yi-chu-xian-shi-sheng-lue-hao-quan-gong-lue">
+        </link>
+        <updated>2019-04-28T07:26:29.000Z</updated>
+        <content type="html"><![CDATA[<p>大家应该都知道用text-overflow:ellipsis属性来实现单行文本的溢出显示省略号(…)。当然部分浏览器还需要加宽度width属性。</p>
+<pre><code>overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+</code></pre>
+<p>-webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。</p>
+<pre><code>overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+</code></pre>
+<p>JavaScript 方案
+用js也可以根据上面的思路去模拟，实现也很简单，推荐几个做类似工作的成熟小工具：
+1.Clamp.js</p>
+<p>下载及文档地址：<a href="https://github.com/josephschmitt/Clamp.js">https://github.com/josephschmitt/Clamp.js</a></p>
+<p>下载及文档地址：<a href="https://github.com/ftlabs/ftellipsis">https://github.com/ftlabs/ftellipsis</a>
+使用也非常简单：</p>
+<pre><code>var element = document.getElementById('ftellipsis');
+var ellipsis = new Ellipsis(element);
+
+ellipsis.calc();
+ellipsis.set();
+</code></pre>
+<p>2.jQuery插件-jQuery.dotdotdot</p>
+<p>下载及详细文档地址：
+<a href="https://github.com/BeSite/jQuery.dotdotdot">https://github.com/BeSite/jQuery.dotdotdot</a>
+<a href="http://dotdotdot.frebsite.nl/">http://dotdotdot.frebsite.nl/</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS-小技巧css解决移动端ios不兼容position:fixed属性]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/css-xiao-ji-qiao-css-jie-jue-yi-dong-duan-ios-bu-jian-rong-positionfixed-shu-xing</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/css-xiao-ji-qiao-css-jie-jue-yi-dong-duan-ios-bu-jian-rong-positionfixed-shu-xing">
+        </link>
+        <updated>2019-04-28T07:25:41.000Z</updated>
+        <content type="html"><![CDATA[<p>移动端开发仿app头部底部固定设置position:fixed，android2.2以上已经实现。但是在ios8以下系统，当小键盘激活时，都会出现位置浮动问题
+如何解决：</p>
+<p>只需要在中间部分外层div添加css样式,就可以实现效果</p>
+<pre><code>position:fixed;
+top:50px;
+bottom:50px;
+overflow:scroll;
+</code></pre>
+<p>demo</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh_cmn&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=utf-8 /&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0&quot; /&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style&gt;
+.head,.foot{position:fixed;left:0;height:38px;line-height:38px;width:100%;background-color:#99CC00;}
+.head{top:0;}
+.foot{bottom:0;}
+.main{position:fixed;top:38px;bottom:38px;width:100%;overflow:scroll;background-color:#BABABA;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class=&quot;head&quot;&gt;顶部固定区域&lt;/header&gt;
+  &lt;article class=&quot;main&quot;  id=&quot;wrapper&quot;&gt;  
+    &lt;div&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;p&gt;当内容欲出隐藏时，灰色区域可上下拖动&lt;/p&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;inputtext&quot;&gt; &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+      content &lt;br&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;footer class=&quot;foot&quot;&gt;底部固定区域&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+    </entry>
+</feed>
