@@ -1,92 +1,179 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>HTML-利用@media screen实现网页布局的自适应 | 吴先生。</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1559551146914">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>吴先生。</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="description" content="温故而知新"/>
+<meta name="keywords" content="温故而知新"/>
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico">
+
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<!-- Modernizr JS -->
+<script src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<scripts src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/respond.min.js"></scripts>
+<![endif]-->
 
+<!-- Comment -->
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/tomorrow-night.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<link crossorigin="anonymous" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" href="https://lib.baomitu.com/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1559551146914" alt="">
-  </a>
-  <h1 class="site-title">
-    吴先生。
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="https://ershaoyelxw.github.io/gridea.github.io" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="https://ershaoyelxw.github.io/gridea.github.io/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="https://ershaoyelxw.github.io/gridea.github.io/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="https://ershaoyelxw.github.io/gridea.github.io/post/about/" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
+  
+<div id="fh5co-offcanvas">
+    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
+        <span><i class="icon-cross3"></i> <span>Close</span></span>
+    </a>
+    <div class="fh5co-bio">
+        <figure>
+            <img src="https://ershaoyelxw.github.io/gridea.github.io/media/images/avatar.png" alt="吴先生。" class="img-responsive">
+        </figure>
+        <h3 class="heading">ABOUT ME</h3>
+        <h2>吴先生。</h2>
+        <p>温故而知新</p>
+        <ul class="fh5co-social">
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="fh5co-menu">
+        <div class="fh5co-box">
+            <h3 class="heading">搜索</h3>
+            <form action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="输入关键字">
+                </div>
+            </form>
+        </div>
+        <div class="fh5co-box">
+            <h3 class="heading">标签</h3>
+            <ul>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/NSTs1AWaV">微信小程序</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/FUgPJNxv_">docker</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/qoqgOifuy">Javascript</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/kt6LnviFL">react-native</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/Fw5HMNT7U">css</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/9Ql766n5d">linux</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/3Bw8-uM5a">html</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/KKDdLMvqX">apicloud</a></li>
+                
+                    <li><a href="https://ershaoyelxw.github.io/gridea.github.io/tag/gridea">Gridea</a></li>
+                
+            </ul>
+        </div>
+    </div>
 </div>
 
-      
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              HTML-利用@media screen实现网页布局的自适应
-            </h2>
-            <div class="post-info">
-              <time class="post-time">
-                · 2019-04-28 ·
-              </time>
-              
-                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/Fw5HMNT7U" class="post-tags">
-                  # css
-                </a>
-              
+<header id="fh5co-header">
+    <div class="container-fluid">
+        <div class="row">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+            <ul class="fh5co-social">
+                
+                    <li>
+                        <a href="https://ershaoyelxw.github.io/gridea.github.io"
+                         >
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ershaoyelxw.github.io/gridea.github.io/archives"
+                         >
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ershaoyelxw.github.io/gridea.github.io/tags"
+                         >
+                            标签
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ershaoyelxw.github.io/gridea.github.io/post/about/"
+                         >
+                            关于
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="col-lg-12 col-md-12 text-center">
+                <h1 id="fh5co-logo">
+                    <a href="https://ershaoyelxw.github.io/gridea.github.io">吴先生。</a>
+                </h1>
             </div>
-            
-            <div class="post-content">
-              <p>开始研究响应式web设计，CSS3 Media Queries是入门。
+        </div>
+    </div>
+</header>
+
+
+<!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+<!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
+
+  <div class="container-fluid">
+      <div class="row fh5co-post-entry single-entry">
+          <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+              <figure class="animate-box">
+                  
+              </figure>
+              <span class="fh5co-meta animate-box">
+                  
+                      <div class="tag-container">
+                          
+                              <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/Fw5HMNT7U" class="tag">css, </a>
+                          
+                      </div>
+                  
+              </span>
+              <h2 class="fh5co-article-title animate-box">HTML-利用@media screen实现网页布局的自适应</h2>
+              <span class="fh5co-meta fh5co-date animate-box">2019-04-28</span>
+
+              <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                  <div class="row">
+                      <div class="col-md-12 animate-box post-content">
+                          <p> <p>开始研究响应式web设计，CSS3 Media Queries是入门。
 Media Queries，其作用就是允许添加表达式用以确定媒体的环境情况，以此来应用不同的样式表</p>
 <p>两种方式：</p>
 <ol>
@@ -200,33 +287,62 @@ Media Queries，其作用就是允许添加表达式用以确定媒体的环境�
   &lt;/html&gt;
 </code></pre>
 <p>文章转载自：http://www.cnblogs.com/mofish/archive/2012/05/23/2515218.html (责任编辑：网页模板)</p>
+ </p>
+                      </div>
+                  </div>
 
-            </div>
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                              <div class="next-post">
+                                  <div class="next">下一篇</div>
+                                  <a href="https://ershaoyelxw.github.io/gridea.github.io/post/vim-chang-yong-kuai-jie-jian">
+                                      <h3 class="post-title">
+                                          VIM-常用快捷键
+                                      </h3>
+                                  </a>
+                              </div>
+                          
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                      </div>
+                  </div>
+              </div>
+
           </article>
-        </div>
-    
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/vim-chang-yong-kuai-jie-jian">
-              <h3 class="post-title">
-                VIM-常用快捷键
-              </h3>
-            </a>
-          </div>  
-        
+      </div>
+  </div>
 
-        
     
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">吴先生。</a>
-</div>
+<footer id="fh5co-footer">
+  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">吴先生。</a></p>
+</footer>
 
-<script>
-  hljs.initHighlightingOnLoad()
+
+    
+<!-- jQuery -->
+<script src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/jquery.waypoints.min.js"></script>
+<!-- Main JS -->
+<script src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/main.js"></script>
+<!-- Md5 Min JS -->
+<script src="https://ershaoyelxw.github.io/gridea.github.io/media/scripts/_vendors/md5.min.js"></script>
+
+<script type="application/javascript">
+    hljs.initHighlightingOnLoad();
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>
