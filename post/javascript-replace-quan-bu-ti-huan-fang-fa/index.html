@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>React-Native ios打包 | 吴先生。</title>
+<title>JavaScript  replace全部替换方法 | 吴先生。</title>
 <link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1560820103203">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
@@ -72,67 +72,31 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              React-Native ios打包
+              JavaScript  replace全部替换方法
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-04-30 ·
+                · 2019-06-17 ·
               </time>
               
-                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/kt6LnviFL" class="post-tags">
-                  # react-native
+                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/qoqgOifuy" class="post-tags">
+                  # Javascript
                 </a>
               
             </div>
             
             <div class="post-content">
-              <h3 id="创建证书的个人证书和公司证书">创建证书的个人证书和公司证书</h3>
-<h3 id="生成bundle文件夹">生成bundle文件夹</h3>
-<ul>
-<li>在Xcode自己项目IOS文件夹下新建一个bundle文件夹</li>
-</ul>
-<ol>
-<li>--entry-file  ios或者android入口的js名称，如index.js</li>
-<li>--platform  平台名称(iOS、Android)</li>
-<li>--dev  设置为false，将会对JavaScript代码进行优化处理。</li>
-<li>--bundle-output 生成的jsbundle文件的名称，如./ios/bundle/index.jsbundle</li>
-<li>--assets-dest 图片以及其他资源存放的目录，如./ios/bundle</li>
-</ol>
-<ul>
-<li>在项目package.json文件script添加命令</li>
-</ul>
-<pre><code>react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle
+              <h3 id="替换第一次出现的字符串">替换第一次出现的字符串</h3>
+<pre><code>var str='我是一名开发程序的程序员';
+str = str.replace('程序',  '编程');
+console.log(str);
 </code></pre>
-<ul>
-<li>执行命令进行打包</li>
-</ul>
-<pre><code>npm run bundle-ios
+<h3 id="替换全部匹配的字符串">替换全部匹配的字符串</h3>
+<pre><code>var str='我是一名开发程序的程序员';
+var reg = new RegExp( '程序', &quot;g&quot; );
+str = str.replace( reg ,  '编程' );
+console.log(newstr);
 </code></pre>
-<p><strong>打包生成完成之后，在IOS目录下看到一个bundle目录，这个目录就是bundle生成的离线资源。</strong></p>
-<h3 id="在xcode导入bundle文件夹">在Xcode导入bundle文件夹</h3>
-<ul>
-<li>使用Create folder references的方式添加文件夹.</li>
-<li>在Xcode项目文件夹右键</li>
-<li>Add Files to &quot;项目名&quot;</li>
-<li>选择bundle文件,在option中选择Create folder references</li>
-</ul>
-<h3 id="设置appdelegatem">设置AppDelegate.m</h3>
-<ul>
-<li>使用Xcode打开项目，在AppDelegate.m文件里添加生产环境配置</li>
-</ul>
-<pre><code>// 测试环境：模拟器
-jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;jsbundle&quot;];
-
-// 生产环境：真机
-jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;bundle/index&quot; withExtension:@&quot;jsbundle&quot;];
-</code></pre>
-<h3 id="开始打包">开始打包</h3>
-<ul>
-<li>Xcode &gt; Product &gt; Scheme &gt; Edit Scheme, 把项目debug状态改成release状态</li>
-<li>在Xcode左上角选择 Generic iOS Device ，修改Version、Build</li>
-<li>Xcode &gt; Product &gt; clean，然后选择Archice</li>
-</ul>
-<p><strong>生成.ipa文件方式有多种，Archice, 将成的.app文件拖到iTunes里面生成</strong></p>
 
             </div>
           </article>
@@ -141,9 +105,9 @@ jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;bundle/index&quot;
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa">
+            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/wei-xin-xiao-cheng-xu-scroll-view-zuo-you-wu-fa-hua-dong-wen-ti">
               <h3 class="post-title">
-                React-Native 开发
+                微信小程序 scroll-view 左右无法滑动问题
               </h3>
             </a>
           </div>  
