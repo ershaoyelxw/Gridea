@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ershaoyelxw.github.io/gridea.github.io</id>
     <title>吴先生。</title>
-    <updated>2019-06-18T01:20:45.797Z</updated>
+    <updated>2019-07-01T16:49:53.582Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ershaoyelxw.github.io/gridea.github.io"/>
     <link rel="self" href="https://ershaoyelxw.github.io/gridea.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png</logo>
     <icon>https://ershaoyelxw.github.io/gridea.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 吴先生。</rights>
+    <entry>
+        <title type="html"><![CDATA[Nuxt.js 部署nginx服务器，静态资源加载不出来解决方法]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/nuxtjs-bu-shu-nginx-fu-wu-qi-jing-tai-zi-yuan-jia-zai-bu-chu-lai-jie-jue-fang-fa</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/nuxtjs-bu-shu-nginx-fu-wu-qi-jing-tai-zi-yuan-jia-zai-bu-chu-lai-jie-jue-fang-fa">
+        </link>
+        <updated>2019-07-01T16:48:28.000Z</updated>
+        <content type="html"><![CDATA[<p>找到项目配置文件，注释以下内容，刷新页面就可以了。</p>
+<pre><code>    #location ~ .*\.(js|css)?$
+    #{
+    #    expires      12h;
+    #    access_log off; 
+    #}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript  replace全部替换方法]]></title>
         <id>https://ershaoyelxw.github.io/gridea.github.io/post/javascript-replace</id>
@@ -366,219 +381,6 @@ jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;bundle/index&quot;
 <li>Xcode &gt; Product &gt; clean，然后选择Archice</li>
 </ul>
 <p><strong>生成.ipa文件方式有多种，Archice, 将成的.app文件拖到iTunes里面生成</strong></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[React-Native 开发]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa">
-        </link>
-        <updated>2019-04-29T11:21:49.000Z</updated>
-        <content type="html"><![CDATA[<h4 id="样式表">样式表</h4>
-<ul>
-<li><a href="https://www.jianshu.com/p/753885f243b3">https://www.jianshu.com/p/753885f243b3</a></li>
-<li><a href="https://www.jianshu.com/p/c59c6890edff">https://www.jianshu.com/p/c59c6890edff</a></li>
-</ul>
-<h4 id="模块合集">模块合集</h4>
-<ul>
-<li>
-<p>BUG合集： <a href="https://www.jianshu.com/p/a6f97bdc042c">https://www.jianshu.com/p/a6f97bdc042c</a></p>
-</li>
-<li>
-<p>DB模块： <a href="https://github.com/andpor/react-native-sqlite-storage">https://github.com/andpor/react-native-sqlite-storage</a></p>
-<ul>
-<li><a href="https://www.jianshu.com/p/729354026540">https://www.jianshu.com/p/729354026540</a></li>
-</ul>
-</li>
-<li>
-<p>下拉加载更多：</p>
-<ul>
-<li>ios： <a href="https://github.com/react-native-studio/react-native-MJRefresh">https://github.com/react-native-studio/react-native-MJRefresh</a></li>
-<li>android： <a href="https://github.com/react-native-studio/react-native-SmartRefreshLayout">https://github.com/react-native-studio/react-native-SmartRefreshLayout</a></li>
-</ul>
-</li>
-<li>
-<p>颜色渐变： <a href="https://github.com/react-native-community/react-native-linear-gradient">https://github.com/react-native-community/react-native-linear-gradient</a></p>
-<ul>
-<li><a href="https://blog.csdn.net/koufulong/article/details/81779323?utm_source=blogxgwz0">https://blog.csdn.net/koufulong/article/details/81779323?utm_source=blogxgwz0</a></li>
-</ul>
-</li>
-<li>
-<p>官方推荐地图： <a href="https://github.com/react-native-community/react-native-maps/tree/1e71a21f39e7b88554852951f773c731c94680c9">https://github.com/react-native-community/react-native-maps/tree/1e71a21f39e7b88554852951f773c731c94680c9</a></p>
-</li>
-<li>
-<p>百度地图： <a href="https://github.com/lovebing/react-native-baidu-map/issues">https://github.com/lovebing/react-native-baidu-map/issues</a></p>
-<ul>
-<li><a href="https://www.jianshu.com/p/eceb7e66fa5e?appinstall=0">https://www.jianshu.com/p/eceb7e66fa5e?appinstall=0</a></li>
-</ul>
-</li>
-<li>
-<p>Toast： <a href="https://github.com/magicismight/react-native-root-toast">https://github.com/magicismight/react-native-root-toast</a></p>
-</li>
-<li>
-<p>路由： <a href="https://github.com/aksonov/react-native-router-flux">https://github.com/aksonov/react-native-router-flux</a></p>
-</li>
-<li>
-<p>Dialog： <a href="https://github.com/jacklam718/react-native-popup-dialog">https://github.com/jacklam718/react-native-popup-dialog</a></p>
-</li>
-<li>
-<p>ICON： <a href="https://github.com/oblador/react-native-vector-icons">https://github.com/oblador/react-native-vector-icons</a></p>
-</li>
-<li>
-<p>轮播： <a href="https://github.com/archriss/react-native-snap-carousel">https://github.com/archriss/react-native-snap-carousel</a></p>
-</li>
-<li>
-<p>Drawer： <a href="https://github.com/root-two/react-native-drawer">https://github.com/root-two/react-native-drawer</a></p>
-</li>
-<li>
-<p>tab： <a href="https://github.com/react-native-community/react-native-tab-view">https://github.com/react-native-community/react-native-tab-view</a></p>
-</li>
-<li>
-<p>swiper： <a href="https://github.com/leecade/react-native-swiper">https://github.com/leecade/react-native-swiper</a></p>
-</li>
-<li>
-<p>扫码： <a href="https://github.com/MarnoDev/AC-QRCode-RN">https://github.com/MarnoDev/AC-QRCode-RN  </a></p>
-<ul>
-<li><a href="https://www.jianshu.com/p/b46328ba1b33">https://www.jianshu.com/p/b46328ba1b33</a></li>
-</ul>
-</li>
-<li>
-<p>权限： <a href="https://github.com/yonahforst/react-native-permissions">https://github.com/yonahforst/react-native-permissions</a></p>
-</li>
-<li>
-<p>panel： <a href="https://github.com/octopitus/rn-sliding-up-panel">https://github.com/octopitus/rn-sliding-up-panel</a></p>
-</li>
-<li>
-<p>骨架屏： <a href="https://github.com/mfrachet/rn-placeholder">https://github.com/mfrachet/rn-placeholder</a></p>
-</li>
-<li>
-<p>html： <a href="https://github.com/jsdf/react-native-htmlview">https://github.com/jsdf/react-native-htmlview</a></p>
-</li>
-<li>
-<p>头部图片下拉： <a href="https://github.com/bamlab/react-native-image-header-scroll-view">https://github.com/bamlab/react-native-image-header-scroll-view</a></p>
-</li>
-<li>
-<p>pop-up： <a href="https://github.com/instea/react-native-popup-menu">https://github.com/instea/react-native-popup-menu</a></p>
-</li>
-<li>
-<p>启动屏： <a href="https://github.com/react-native-component/react-native-smart-splash-screen">https://github.com/react-native-component/react-native-smart-splash-screen</a></p>
-<ul>
-<li><a href="https://www.jianshu.com/p/4540ac17dfd4">https://www.jianshu.com/p/4540ac17dfd4</a></li>
-<li><a href="https://www.jianshu.com/p/56562e5a9396?from=timeline&amp;isappinstalled=0">https://www.jianshu.com/p/56562e5a9396?from=timeline&amp;isappinstalled=0</a></li>
-</ul>
-</li>
-<li>
-<p>webview相互调用函数： <a href="https://github.com/pinqy520/react-native-webview-invoke">https://github.com/pinqy520/react-native-webview-invoke</a></p>
-</li>
-<li>
-<p>webview： <a href="https://github.com/react-native-community/react-native-webview">https://github.com/react-native-community/react-native-webview</a></p>
-</li>
-<li>
-<p>tab： <a href="https://github.com/ptomasroos/react-native-scrollable-tab-view">https://github.com/ptomasroos/react-native-scrollable-tab-view</a></p>
-<ul>
-<li>https://www.jianshu.com/p/a730190994c2</li>
-</ul>
-</li>
-<li>
-<p>grid： <a href="https://github.com/saleel/react-native-super-grid">https://github.com/saleel/react-native-super-grid</a></p>
-</li>
-<li>
-<p>chart： <a href="https://github.com/wuxudong/react-native-charts-wrapper">https://github.com/wuxudong/react-native-charts-wrapper</a></p>
-</li>
-<li>
-<p>imgpicket： <a href="https://github.com/mg365/react-native-customized-image-picker">https://github.com/mg365/react-native-customized-image-picker</a></p>
-<ul>
-<li><a href="https://github.com/react-native-community/react-native-image-picker">https://github.com/react-native-community/react-native-image-picker</a></li>
-<li><a href="https://www.jianshu.com/p/527f48ebc26a">https://www.jianshu.com/p/527f48ebc26a</a></li>
-</ul>
-</li>
-<li>
-<p>清理缓存： <a href="https://github.com/reactnativecn/react-native-http-cache">https://github.com/reactnativecn/react-native-http-cache</a></p>
-<ul>
-<li><a href="https://www.cnblogs.com/pengsi/p/7810439.html">https://www.cnblogs.com/pengsi/p/7810439.html</a></li>
-<li><a href="https://www.jianshu.com/p/395f752018fa">https://www.jianshu.com/p/395f752018fa</a></li>
-<li><a href="https://www.jianshu.com/p/b99d3a46947f">https://www.jianshu.com/p/b99d3a46947f</a></li>
-</ul>
-</li>
-<li>
-<p>微信模块： <a href="https://github.com/yorkie/react-native-wechat">https://github.com/yorkie/react-native-wechat</a></p>
-<ul>
-<li><a href="https://www.jianshu.com/p/6a792118fae4">https://www.jianshu.com/p/6a792118fae4</a></li>
-</ul>
-</li>
-<li>
-<p>fs： <a href="https://github.com/itinance/react-native-fs">https://github.com/itinance/react-native-fs</a></p>
-</li>
-<li>
-<p>Modal： <a href="https://github.com/react-native-community/react-native-modal">https://github.com/react-native-community/react-native-modal</a></p>
-</li>
-<li>
-<p>踩坑集合： <a href="https://github.com/ChenYilong/iOS9AdaptationTips">https://github.com/ChenYilong/iOS9AdaptationTips</a></p>
-</li>
-<li>
-<p>自动清理计时器模块： <a href="https://github.com/react-native-component/react-native-smart-timer-enhance">https://github.com/react-native-component/react-native-smart-timer-enhance</a></p>
-</li>
-<li>
-<p>服务器发送事件： <a href="https://github.com/jordanbyron/react-native-event-source">https://github.com/jordanbyron/react-native-event-source</a></p>
-</li>
-<li>
-<p>安卓打包教程： <a href="https://www.jianshu.com/p/b7d2d93a6255">https://www.jianshu.com/p/b7d2d93a6255</a></p>
-</li>
-</ul>
-<h4 id="packagejson">package.json</h4>
-<pre><code>{
-  &quot;name&quot;: &quot;rn&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;private&quot;: true,
-  &quot;scripts&quot;: {
-    &quot;dev&quot;: &quot;react-native run-ios&quot;,
-    &quot;start&quot;: &quot;node node_modules/react-native/local-cli/cli.js start&quot;,
-    &quot;test&quot;: &quot;jest&quot;,
-    &quot;bundle-ios&quot;: &quot;node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle&quot;
-  },
-  &quot;dependencies&quot;: {
-    &quot;create-react-class&quot;: &quot;^15.6.3&quot;,
-    &quot;prop-types&quot;: &quot;^15.7.2&quot;,
-    &quot;qs&quot;: &quot;^6.7.0&quot;,
-    &quot;react&quot;: &quot;16.6.3&quot;,
-    &quot;react-native&quot;: &quot;^0.57.8&quot;,
-    &quot;react-native-app-intro-slider&quot;: &quot;^2.0.1&quot;,
-    &quot;react-native-drawer&quot;: &quot;^2.5.1&quot;,
-    &quot;react-native-fs&quot;: &quot;^2.13.3&quot;,
-    &quot;react-native-gesture-handler&quot;: &quot;^1.0.12&quot;,
-    &quot;react-native-htmlview&quot;: &quot;^0.14.0&quot;,
-    &quot;react-native-http-cache&quot;: &quot;^0.2.0&quot;,
-    &quot;react-native-image-picker&quot;: &quot;^0.28.1&quot;,
-    &quot;react-native-modal&quot;: &quot;^10.0.0&quot;,
-    &quot;react-native-permissions&quot;: &quot;^1.1.1&quot;,
-    &quot;react-native-popup-dialog&quot;: &quot;^0.18.2&quot;,
-    &quot;react-native-root-toast&quot;: &quot;^3.0.2&quot;,
-    &quot;react-native-router-flux&quot;: &quot;^4.0.6&quot;,
-    &quot;react-native-smart-timer-enhance&quot;: &quot;^1.0.3&quot;,
-    &quot;react-native-snap-carousel&quot;: &quot;^3.7.5&quot;,
-    &quot;react-native-splash-screen&quot;: &quot;^3.2.0&quot;,
-    &quot;react-native-swiper&quot;: &quot;^1.5.14&quot;,
-    &quot;react-native-vector-icons&quot;: &quot;^6.4.2&quot;,
-    &quot;react-native-wechat&quot;: &quot;^1.9.10&quot;,
-    &quot;redux&quot;: &quot;^4.0.1&quot;,
-    &quot;redux-thunk&quot;: &quot;^2.3.0&quot;
-  },
-  &quot;devDependencies&quot;: {
-    &quot;babel-jest&quot;: &quot;23.6.0&quot;,
-    &quot;jest&quot;: &quot;23.6.0&quot;,
-    &quot;metro-react-native-babel-preset&quot;: &quot;0.51.1&quot;,
-    &quot;react-redux&quot;: &quot;^6.0.0&quot;,
-    &quot;react-test-renderer&quot;: &quot;16.6.3&quot;,
-    &quot;redux-devtools&quot;: &quot;^3.5.0&quot;,
-    &quot;redux-logger&quot;: &quot;^3.0.6&quot;
-  },
-  &quot;jest&quot;: {
-    &quot;preset&quot;: &quot;react-native&quot;
-  }
-}
-
-
-</code></pre>
 ]]></content>
     </entry>
 </feed>

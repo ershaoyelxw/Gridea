@@ -1,9 +1,9 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>docker | 吴先生。</title>
+<title>Nuxt.js 部署nginx服务器，静态资源加载不出来解决方法 | 吴先生。</title>
 <link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1561999788612">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
@@ -68,60 +68,45 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：#docker
-            </h2> 
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Nuxt.js 部署nginx服务器，静态资源加载不出来解决方法
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-07-02 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>找到项目配置文件，注释以下内容，刷新页面就可以了。</p>
+<pre><code>    #location ~ .*\.(js|css)?$
+    #{
+    #    expires      12h;
+    #    access_log off; 
+    #}
+</code></pre>
+
+            </div>
+          </article>
         </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://ershaoyelxw.github.io/gridea.github.io/post/docker-ji-ben-ming-ling">
-        <h2 class="post-title">docker 使用</h2>
-      </a>
-      <div class="post-info">
-        <time class="post-time">
-          · 2019-05-30 ·
-        </time>
+    
         
-          <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/FUgPJNxv_" class="post-tag">
-            # docker
-          </a>
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/javascript-replace">
+              <h3 class="post-title">
+                JavaScript  replace全部替换方法
+              </h3>
+            </a>
+          </div>  
         
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://ershaoyelxw.github.io/gridea.github.io/post/docker-an-zhuang-bao-ta-mian-ban">
-        <h2 class="post-title">docker 安装宝塔面板</h2>
-      </a>
-      <div class="post-info">
-        <time class="post-time">
-          · 2019-05-30 ·
-        </time>
-        
-          <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/FUgPJNxv_" class="post-tag">
-            # docker
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
 
-        <div class="pagination-container">
-  
-  
-</div>
-
+        
+    
         <div class="site-footer">
   Powered by <a href="https://ershaoyelxw.github.io/gridea.github.io" target="_blank">吴先生。</a>
 </div>
