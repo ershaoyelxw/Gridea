@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ershaoyelxw.github.io/gridea.github.io</id>
     <title>吴先生。</title>
-    <updated>2019-07-01T16:50:22.251Z</updated>
+    <updated>2019-07-04T09:00:08.489Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ershaoyelxw.github.io/gridea.github.io"/>
     <link rel="self" href="https://ershaoyelxw.github.io/gridea.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png</logo>
     <icon>https://ershaoyelxw.github.io/gridea.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 吴先生。</rights>
+    <entry>
+        <title type="html"><![CDATA[React-Native 解决在IOS端使用圆角borderRadius失效问题]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-jie-jue-zai-ios-duan-shi-yong-yuan-jiao-borderradius-shi-xiao-wen-ti</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-jie-jue-zai-ios-duan-shi-yong-yuan-jiao-borderradius-shi-xiao-wen-ti">
+        </link>
+        <updated>2019-07-04T08:58:40.000Z</updated>
+        <content type="html"><![CDATA[<p>在IOS上使用圆角属性失败解决方法：</p>
+<pre><code>overflow: 'hidden'
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Nuxt.js 部署nginx服务器，静态资源加载不出来解决方法]]></title>
         <id>https://ershaoyelxw.github.io/gridea.github.io/post/nuxtjs-bu-shu-nginx-fu-wu-qi-jing-tai-zi-yuan-jia-zai-bu-chu-lai-jie-jue-fang-fa</id>
@@ -326,61 +337,6 @@ end
 <p>生成icon和启动图，appstore下载 Appicons and Launchimages Lite 使用。</p>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[React-Native ios打包]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-ios-da-bao</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-ios-da-bao">
-        </link>
-        <updated>2019-04-30T01:04:20.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="创建证书的个人证书和公司证书">创建证书的个人证书和公司证书</h3>
-<h3 id="生成bundle文件夹">生成bundle文件夹</h3>
-<ul>
-<li>在Xcode自己项目IOS文件夹下新建一个bundle文件夹</li>
-</ul>
-<ol>
-<li>--entry-file  ios或者android入口的js名称，如index.js</li>
-<li>--platform  平台名称(iOS、Android)</li>
-<li>--dev  设置为false，将会对JavaScript代码进行优化处理。</li>
-<li>--bundle-output 生成的jsbundle文件的名称，如./ios/bundle/index.jsbundle</li>
-<li>--assets-dest 图片以及其他资源存放的目录，如./ios/bundle</li>
-</ol>
-<ul>
-<li>在项目package.json文件script添加命令</li>
-</ul>
-<pre><code>react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle
-</code></pre>
-<ul>
-<li>执行命令进行打包</li>
-</ul>
-<pre><code>npm run bundle-ios
-</code></pre>
-<p><strong>打包生成完成之后，在IOS目录下看到一个bundle目录，这个目录就是bundle生成的离线资源。</strong></p>
-<h3 id="在xcode导入bundle文件夹">在Xcode导入bundle文件夹</h3>
-<ul>
-<li>使用Create folder references的方式添加文件夹.</li>
-<li>在Xcode项目文件夹右键</li>
-<li>Add Files to &quot;项目名&quot;</li>
-<li>选择bundle文件,在option中选择Create folder references</li>
-</ul>
-<h3 id="设置appdelegatem">设置AppDelegate.m</h3>
-<ul>
-<li>使用Xcode打开项目，在AppDelegate.m文件里添加生产环境配置</li>
-</ul>
-<pre><code>// 测试环境：模拟器
-jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;jsbundle&quot;];
-
-// 生产环境：真机
-jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;bundle/index&quot; withExtension:@&quot;jsbundle&quot;];
-</code></pre>
-<h3 id="开始打包">开始打包</h3>
-<ul>
-<li>Xcode &gt; Product &gt; Scheme &gt; Edit Scheme, 把项目debug状态改成release状态</li>
-<li>在Xcode左上角选择 Generic iOS Device ，修改Version、Build</li>
-<li>Xcode &gt; Product &gt; clean，然后选择Archice</li>
-</ul>
-<p><strong>生成.ipa文件方式有多种，Archice, 将成的.app文件拖到iTunes里面生成</strong></p>
 ]]></content>
     </entry>
 </feed>
