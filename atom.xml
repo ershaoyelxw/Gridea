@@ -2,14 +2,57 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ershaoyelxw.github.io/gridea.github.io</id>
     <title>吴先生。</title>
-    <updated>2019-07-04T09:00:08.489Z</updated>
+    <updated>2020-02-26T09:14:10.969Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ershaoyelxw.github.io/gridea.github.io"/>
     <link rel="self" href="https://ershaoyelxw.github.io/gridea.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png</logo>
     <icon>https://ershaoyelxw.github.io/gridea.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, 吴先生。</rights>
+    <rights>All rights reserved 2020, 吴先生。</rights>
+    <entry>
+        <title type="html"><![CDATA[部署node到服务器，nginx设置静态资源可以直接访问]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen">
+        </link>
+        <updated>2020-02-26T09:04:46.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>location /接口地址/ {
+	proxy_pass http://127.0.0.1:7001/;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ApiCloud 模块]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/apicloud-mo-kuai</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/apicloud-mo-kuai">
+        </link>
+        <updated>2019-10-30T08:27:20.000Z</updated>
+        <content type="html"><![CDATA[<p>{
+'md-name': &quot;videoPlayer&quot;,
+'md-name': &quot;webBrowser&quot;,
+'md-name': &quot;photoBrowser&quot;,
+'md-name': &quot;H5InputRelevant&quot;,
+'md-name': &quot;dialogBox&quot;,
+'md-name': &quot;UICustomPicker&quot;,
+'md-name': &quot;UIMediaScanner&quot;,
+'md-name': &quot;guide&quot;,
+'md-name': &quot;UIPullRefreshFlash&quot;,
+'md-name': &quot;FNSettings&quot;,
+'md-name': &quot;UILoading&quot;,
+'md-name': &quot;privacy&quot;,
+'md-name': &quot;UICityList&quot;,
+'md-name': &quot;fs&quot;,
+'md-name': &quot;trans&quot;,
+'md-name': &quot;clipBoard&quot;,
+'md-name': &quot;UIInput&quot;,
+'md-name': &quot;FNScanner&quot;,
+'md-name': &quot;UIScrollPicture&quot;,
+'md-name': &quot;db&quot;,
+'md-name': &quot;mam&quot;,
+}</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[React-Native 解决在IOS端使用圆角borderRadius失效问题]]></title>
         <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-jie-jue-zai-ios-duan-shi-yong-yuan-jiao-borderradius-shi-xiao-wen-ti</id>
@@ -173,170 +216,6 @@ docker rm $(docker ps -a -a) //删除所有容器
 <pre><code>var value = 42948;
 var date = new Date(1900, 0, value - 1);
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[React Native开发配置]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa-pei-zhi</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-kai-fa-pei-zhi">
-        </link>
-        <updated>2019-05-05T07:16:51.000Z</updated>
-        <content type="html"><![CDATA[<h4 id="安卓权限配置">安卓权限配置</h4>
-<ul>
-<li>android/app/src/AndroidMainfest.xml</li>
-</ul>
-<pre><code>&lt;!--获取读写外置存储权限--&gt;
-&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
-&lt;!--获取相机权限--&gt;
-&lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
-&lt;!--获取地址相关权限--&gt;
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
-
-&lt;!-- 这个权限用于进行网络定位--&gt;
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot;&gt;&lt;/uses-permission&gt;
-&lt;!-- 这个权限用于访问GPS定位--&gt;
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;&gt;&lt;/uses-permission&gt;
-&lt;!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位--&gt;
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;&gt;&lt;/uses-permission&gt;
-
-
-&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
-&lt;uses-permission android:name=&quot;android.permission.SYSTEM_ALERT_WINDOW&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
-&lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot; /&gt;
-&lt;uses-permission android:name=&quot;android.permission.FLASHLIGHT&quot; /&gt;
-&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
-&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
-</code></pre>
-<h3 id="安卓键盘弹出会导致底部撑起来解决方法">安卓键盘弹出会导致底部撑起来，解决方法</h3>
-<pre><code>在android &gt; app &gt; src &gt; main &gt; AndroidManifest.xml，activity中添加
-</code></pre>
-<pre><code>默认： android:windowSoftInputMode=&quot;adjustResize&quot;
-修改： android:windowSoftInputMode=&quot;stateAlwaysHidden|adjustPan&quot;
-</code></pre>
-<h3 id="ios权限配置">iOS权限配置</h3>
-<ul>
-<li>ios调用录视频需要添加麦克风权限</li>
-</ul>
-<pre><code>Privacy - Microphone Usage Description  使用麦克风
-Privacy - Bluetooth Peripheral Usage Description 使用蓝牙
-Privacy - Camera Usage Description 获取拍照
-Privacy - Location Usage Description 获取位置
-Privacy - Location When In Use Usage Description 获取位置
-Privacy - Photo Library Additions Usage Description 获取相册
-Privacy - Photo Library Usage Description 获取相册
-</code></pre>
-<h4 id="微信sdk">微信SDK</h4>
-<ul>
-<li>ios调用微信SDK需要在info.plist添加LSApplicationQueriesSchemes</li>
-</ul>
-<pre><code>LSApplicationQueriesSchemes Array 
-item 0   String    weixin
-item 1   String    wechat
-</code></pre>
-<ul>
-<li>xcode项目中的Info配置URL Types</li>
-</ul>
-<pre><code>URL Types
-Identifier填写:  weixin
-URL Schemes填写微信appid:  appid
-上传对应weixin APP image
-</code></pre>
-<ul>
-<li>xcode项目中的Build Phases，Link Binary With Libraries添加下面5个文件</li>
-</ul>
-<pre><code>libsqlite3.0.tbd
-libc++.tbd
-libz.tbd
-CoreTelephony.framework
-SystemConfiguration.framework
-</code></pre>
-<h4 id="react-native-http-cache-报错修改node_modules文件夹">react-native-http-cache 报错，修改node_modules文件夹</h4>
-<ul>
-<li>android解决方法</li>
-</ul>
-<pre><code> //FileCache cache1 = ImagePipelineFactory.getInstance().getMainDiskStorageCache();
-FileCache cache1 = ImagePipelineFactory.getInstance().getMainFileCache();
-
-//FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageDiskStorageCache();
-FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageFileCache();
-</code></pre>
-<ul>
-<li>iOS解决方法
-打开xcode 修改RCTHttpCache.xcodeproj  &gt; RCTHttpCache  &gt; RCTHttpCache.m文件</li>
-</ul>
-<pre><code>#import &quot;RCTHttpCache.h&quot;
-//TODO: ershaoyes
-//#import &quot;RCTImageLoader.h&quot;
-//#import &quot;RCTImageCache.h&quot;
-//#import &quot;RCTBridge.h&quot;
-</code></pre>
-<h4 id="react-native-scrollable-tab-view嵌套在scrollview里ios显示正常在安卓上无法显示">react-native-scrollable-tab-view嵌套在ScrollView里IOS显示正常，在安卓上无法显示</h4>
-<pre><code>Android端使用了ViewPagerAndroid，全局搜索Platform.OS === 'ios'，修改为 true
-</code></pre>
-<pre><code>Platform.OS === 'ios'
-</code></pre>
-<h4 id="react-native-baidu-map-百度地图">react-native-baidu-map 百度地图</h4>
-<ul>
-<li>
-<p>Podfile 配置。</p>
-<p>ios目录下创建Podfile文件。命令行执行pod install</p>
-</li>
-</ul>
-<pre><code># Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
-target 'rn' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for rn
-
-  pod 'React', :path =&gt; '../node_modules/react-native', :subspecs =&gt; [
-    'Core',
-    'CxxBridge',
-    'DevSupport', 
-    'RCTText',
-    'RCTNetwork',
-    'RCTWebSocket', 
-    'RCTAnimation'
-  ]
-  pod 'yoga', :path =&gt; '../node_modules/react-native/ReactCommon/yoga'
-  pod 'DoubleConversion', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-  pod 'glog', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/glog.podspec'
-  pod 'Folly', :podspec =&gt; '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-
-  pod 'react-native-baidu-map', :podspec =&gt; '../node_modules/react-native-baidu-map/ios/react-native-baidu-map.podspec'
-
-  target 'rn-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'rnTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[IOS ICON 工具]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/ios-icon-gong-ju</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/ios-icon-gong-ju">
-        </link>
-        <updated>2019-05-02T16:41:22.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>
-<p><a href="https://icon.wuruihong.com/#/ios">在线生成icon图片的工具：https://icon.wuruihong.com/#/ios</a></p>
-</li>
-<li>
-<p>生成icon和启动图，appstore下载 Appicons and Launchimages Lite 使用。</p>
-</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
