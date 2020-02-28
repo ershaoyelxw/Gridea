@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ershaoyelxw.github.io/gridea.github.io</id>
     <title>吴先生。</title>
-    <updated>2020-02-26T09:19:20.184Z</updated>
+    <updated>2020-02-28T14:55:13.746Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ershaoyelxw.github.io/gridea.github.io"/>
     <link rel="self" href="https://ershaoyelxw.github.io/gridea.github.io/atom.xml"/>
@@ -10,6 +10,38 @@
     <logo>https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png</logo>
     <icon>https://ershaoyelxw.github.io/gridea.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 吴先生。</rights>
+    <entry>
+        <title type="html"><![CDATA[解决ios HTML5点播m3u8(hls)格式视频问题]]></title>
+        <id>https://ershaoyelxw.github.io/gridea.github.io/post/jie-jue-ios-html5-dian-bo-m3u8hlsge-shi-shi-pin-wen-ti</id>
+        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/jie-jue-ios-html5-dian-bo-m3u8hlsge-shi-shi-pin-wen-ti">
+        </link>
+        <updated>2020-02-28T14:37:13.000Z</updated>
+        <content type="html"><![CDATA[<p>由于HLS是由Apple公司提出的，所以在iOS电脑或手机上，你可以直接使用Safari浏览器的<video>播放m3u8格式视频文件。而其他浏览器则需要借助hls.js来兼容m3u8。</p>
+<p>使用hls.js，不需要任何定制的播放器，只需要<video>元素就能播放m3u8。</p>
+<p>首先判断浏览器是否支持hls，如果支持就实例化new Hls()，加载m3u8源，然后播放。如果不支持hls，而支持苹果原生应用，则播放另一个m3u8源。</p>
+<pre><code class="language-npm">npm install --save hls.js
+</code></pre>
+<pre><code>&lt;video id=&quot;video&quot; height=&quot;100%&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
+&lt;script&gt;
+		import Hls from 'hls.js'; 
+		var video = document.getElementById('video');
+		if(Hls.isSupported()) {
+			var hls = new Hls();
+			hls.loadSource('https://yunqivedio.alicdn.com/2017yq/v2/0x0/96d79d3f5400514a6883869399708e11/96d79d3f5400514a6883869399708e11.m3u8');
+			hls.attachMedia(video);
+			hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video.play();
+		});
+	 } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+			video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+			video.addEventListener('loadedmetadata',function() {
+				video.play();
+			});
+		}
+&lt;/script&gt;	
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[部署node到服务器，nginx设置静态资源可以直接访问]]></title>
         <id>https://ershaoyelxw.github.io/gridea.github.io/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen</id>
@@ -206,19 +238,6 @@ docker rm $(docker ps -a -a) //删除所有容器
   icons.textContent = '@font-face { font-family: ct-icons; src: url(&quot;' + chrome.extension.getURL('js/ct-ui/fonts/' + 'ct-icons.woff') + '&quot;),url(&quot;' +chrome.extension.getURL('js/ct-ui/fonts/' + 'ct-icons.ttf') + '&quot;);
   font-weight: 400;font-style: normal }';
   document.head.appendChild(icons);
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Javascript 解决XLSX读取excel文件，单元格读取时间格式后变成浮点型]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/javascript-jie-jue-xlsx-du-qu-excel-wen-jian-dan-yuan-ge-du-qu-shi-jian-ge-shi-hou-bian-cheng-fu-dian-xing</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/javascript-jie-jue-xlsx-du-qu-excel-wen-jian-dan-yuan-ge-du-qu-shi-jian-ge-shi-hou-bian-cheng-fu-dian-xing">
-        </link>
-        <updated>2019-05-29T12:32:06.000Z</updated>
-        <content type="html"><![CDATA[<p>XLSX读取excel文件，单元格读取时间格式后变成浮点型</p>
-<p>解决方法：</p>
-<pre><code>var value = 42948;
-var date = new Date(1900, 0, value - 1);
 </code></pre>
 ]]></content>
     </entry>

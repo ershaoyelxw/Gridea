@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>部署node到服务器，nginx设置静态资源可以直接访问 | 吴先生。</title>
+<title>解决ios HTML5点播m3u8(hls)格式视频问题 | 吴先生。</title>
 <link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1582901708350">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
@@ -72,23 +72,55 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              部署node到服务器，nginx设置静态资源可以直接访问
+              解决ios HTML5点播m3u8(hls)格式视频问题
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2020-02-26 ·
+                · 2020-02-28 ·
               </time>
+              
+                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/ceozh29KV" class="post-tags">
+                  # vue
+                </a>
+              
+                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/6F-IkuY8u" class="post-tags">
+                  # chrome
+                </a>
+              
+                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/3Bw8-uM5a" class="post-tags">
+                  # html
+                </a>
+              
+                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/qoqgOifuy" class="post-tags">
+                  # Javascript
+                </a>
               
             </div>
             
             <div class="post-content">
-              <pre><code>location /接口路径前缀/ {
-	proxy_pass http://127.0.0.1:7001/;
-}
-
-location /admin/ {
-	proxy_pass http://127.0.0.1:7001/;
-}
+              <p>由于HLS是由Apple公司提出的，所以在iOS电脑或手机上，你可以直接使用Safari浏览器的<video>播放m3u8格式视频文件。而其他浏览器则需要借助hls.js来兼容m3u8。</p>
+<p>使用hls.js，不需要任何定制的播放器，只需要<video>元素就能播放m3u8。</p>
+<p>首先判断浏览器是否支持hls，如果支持就实例化new Hls()，加载m3u8源，然后播放。如果不支持hls，而支持苹果原生应用，则播放另一个m3u8源。</p>
+<pre><code class="language-npm">npm install --save hls.js
+</code></pre>
+<pre><code>&lt;video id=&quot;video&quot; height=&quot;100%&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
+&lt;script&gt;
+		import Hls from 'hls.js'; 
+		var video = document.getElementById('video');
+		if(Hls.isSupported()) {
+			var hls = new Hls();
+			hls.loadSource('https://yunqivedio.alicdn.com/2017yq/v2/0x0/96d79d3f5400514a6883869399708e11/96d79d3f5400514a6883869399708e11.m3u8');
+			hls.attachMedia(video);
+			hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video.play();
+		});
+	 } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+			video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+			video.addEventListener('loadedmetadata',function() {
+				video.play();
+			});
+		}
+&lt;/script&gt;	
 </code></pre>
 
             </div>
@@ -98,9 +130,9 @@ location /admin/ {
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/apicloud-mo-kuai">
+            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen">
               <h3 class="post-title">
-                ApiCloud 模块
+                部署node到服务器，nginx设置静态资源可以直接访问
               </h3>
             </a>
           </div>  
