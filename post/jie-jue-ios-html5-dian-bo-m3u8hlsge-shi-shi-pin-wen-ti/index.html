@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>解决ios HTML5点播m3u8(hls)格式视频问题 | 吴先生。</title>
-<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1582901708350">
+<link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1582901837958">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
 
@@ -18,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://ershaoyelxw.github.io/gridea.github.io">
-  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1582901708350" alt="">
+  <img class="avatar" src="https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png?v=1582901837958" alt="">
   </a>
   <h1 class="site-title">
     吴先生。
@@ -101,7 +101,7 @@
               <p>由于HLS是由Apple公司提出的，所以在iOS电脑或手机上，你可以直接使用Safari浏览器的<video>播放m3u8格式视频文件。而其他浏览器则需要借助hls.js来兼容m3u8。</p>
 <p>使用hls.js，不需要任何定制的播放器，只需要<video>元素就能播放m3u8。</p>
 <p>首先判断浏览器是否支持hls，如果支持就实例化new Hls()，加载m3u8源，然后播放。如果不支持hls，而支持苹果原生应用，则播放另一个m3u8源。</p>
-<pre><code class="language-npm">npm install --save hls.js
+<pre><code>npm install --save hls.js
 </code></pre>
 <pre><code>&lt;video id=&quot;video&quot; height=&quot;100%&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
 &lt;script&gt;
