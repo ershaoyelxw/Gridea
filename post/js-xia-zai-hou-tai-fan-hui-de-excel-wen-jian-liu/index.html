@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>微信小程序 scroll-view 左右无法滑动问题 | 吴先生。</title>
+<title>JS下载后台返回的excel文件流 | 吴先生。</title>
 <link rel="shortcut icon" href="https://ershaoyelxw.github.io/gridea.github.io/favicon.ico?v=1584209711045">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://ershaoyelxw.github.io/gridea.github.io/styles/main.css">
@@ -72,24 +72,33 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              微信小程序 scroll-view 左右无法滑动问题
+              JS下载后台返回的excel文件流
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-05-31 ·
+                · 2020-03-15 ·
               </time>
-              
-                <a href="https://ershaoyelxw.github.io/gridea.github.io/tag/NSTs1AWaV" class="post-tags">
-                  # 微信小程序
-                </a>
               
             </div>
             
             <div class="post-content">
-              <ul>
-<li>scroll-view 滑动元素取消使用 <code>float: left;</code> 浮动</li>
-<li>scroll-view 滑动元素添加 <code>dislay:inline-block;</code> 样式</li>
-</ul>
+              <pre><code class="language-javascript">  var req = new XMLHttpRequest();
+  req.open(&quot;POST&quot;, `url`, true);
+  req.responseType = &quot;blob&quot;;
+  req.onload = function (oEvent) {
+    var res = req.response;
+
+    var link = document.createElement('a');
+    link.download = item &amp;&amp; `${item.mobile || '未知'}通讯录.xls` || '通讯录.xls';
+    link.style.display = 'none';
+    var blob = new Blob([res]);
+    link.href = URL.createObjectURL(blob);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  req.send();
+</code></pre>
 
             </div>
           </article>
@@ -98,9 +107,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/docker-ji-ben-ming-ling">
+            <a href="https://ershaoyelxw.github.io/gridea.github.io/post/jie-jue-ios-html5-dian-bo-m3u8hlsge-shi-shi-pin-wen-ti">
               <h3 class="post-title">
-                docker 使用
+                解决ios HTML5点播m3u8(hls)格式视频问题
               </h3>
             </a>
           </div>  
