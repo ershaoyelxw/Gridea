@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://ershaoyelxw.github.io/gridea.github.io</id>
+    <id>/Users/mac/Documents/Gridea/output</id>
     <title>吴先生。</title>
-    <updated>2020-03-14T18:15:12.591Z</updated>
+    <updated>2020-04-11T05:19:59.631Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://ershaoyelxw.github.io/gridea.github.io"/>
-    <link rel="self" href="https://ershaoyelxw.github.io/gridea.github.io/atom.xml"/>
+    <link rel="alternate" href="/Users/mac/Documents/Gridea/output"/>
+    <link rel="self" href="/Users/mac/Documents/Gridea/output/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://ershaoyelxw.github.io/gridea.github.io/images/avatar.png</logo>
-    <icon>https://ershaoyelxw.github.io/gridea.github.io/favicon.ico</icon>
+    <logo>/Users/mac/Documents/Gridea/output/images/avatar.png</logo>
+    <icon>/Users/mac/Documents/Gridea/output/favicon.ico</icon>
     <rights>All rights reserved 2020, 吴先生。</rights>
     <entry>
+        <title type="html"><![CDATA[Mac VsCode更新失败]]></title>
+        <id>/Users/mac/Documents/Gridea/output/post/mac-vscode-geng-xin-shi-bai/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/mac-vscode-geng-xin-shi-bai/index.html">
+        </link>
+        <updated>2020-04-11T05:19:02.000Z</updated>
+        <content type="html"><![CDATA[<p>Mac VsCode检查更新出现Could not create temporary directory: 权限被拒绝，解决方法：</p>
+<pre><code>sudo chown $USER ~/Library/Caches/com.microsoft.VSCode.ShipIt/  
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[JS下载后台返回的excel文件流]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/js-xia-zai-hou-tai-fan-hui-de-excel-wen-jian-liu</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/js-xia-zai-hou-tai-fan-hui-de-excel-wen-jian-liu">
+        <id>/Users/mac/Documents/Gridea/output/post/js-xia-zai-hou-tai-fan-hui-de-excel-wen-jian-liu/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/js-xia-zai-hou-tai-fan-hui-de-excel-wen-jian-liu/index.html">
         </link>
         <updated>2020-03-14T18:13:34.000Z</updated>
         <content type="html"><![CDATA[<pre><code class="language-javascript">  var req = new XMLHttpRequest();
@@ -37,8 +48,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[解决ios HTML5点播m3u8(hls)格式视频问题]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/jie-jue-ios-html5-dian-bo-m3u8hlsge-shi-shi-pin-wen-ti</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/jie-jue-ios-html5-dian-bo-m3u8hlsge-shi-shi-pin-wen-ti">
+        <id>/Users/mac/Documents/Gridea/output/post/jie-jue-ios-html5-dian-bo-m3u8hlsge-shi-shi-pin-wen-ti/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/jie-jue-ios-html5-dian-bo-m3u8hlsge-shi-shi-pin-wen-ti/index.html">
         </link>
         <updated>2020-02-28T14:37:13.000Z</updated>
         <content type="html"><![CDATA[<p>由于HLS是由Apple公司提出的，所以在iOS电脑或手机上，你可以直接使用Safari浏览器的video标签播放m3u8格式视频文件。而其他浏览器则需要借助hls.js来兼容m3u8。</p>
@@ -69,8 +80,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[部署node到服务器，nginx设置静态资源可以直接访问]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen">
+        <id>/Users/mac/Documents/Gridea/output/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/bu-shu-node-dao-fu-wu-qi-nginx-she-zhi-jing-tai-zi-yuan-ke-yi-zhi-jie-fang-wen/index.html">
         </link>
         <updated>2020-02-26T09:04:46.000Z</updated>
         <content type="html"><![CDATA[<pre><code>location /接口路径前缀/ {
@@ -85,8 +96,8 @@ location /admin/ {
     </entry>
     <entry>
         <title type="html"><![CDATA[ApiCloud 模块]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/apicloud-mo-kuai</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/apicloud-mo-kuai">
+        <id>/Users/mac/Documents/Gridea/output/post/apicloud-mo-kuai/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/apicloud-mo-kuai/index.html">
         </link>
         <updated>2019-10-30T08:27:20.000Z</updated>
         <content type="html"><![CDATA[<p>{
@@ -116,8 +127,8 @@ location /admin/ {
     </entry>
     <entry>
         <title type="html"><![CDATA[React-Native 解决在IOS端使用圆角borderRadius失效问题]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/react-native-jie-jue-zai-ios-duan-shi-yong-yuan-jiao-borderradius-shi-xiao-wen-ti</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/react-native-jie-jue-zai-ios-duan-shi-yong-yuan-jiao-borderradius-shi-xiao-wen-ti">
+        <id>/Users/mac/Documents/Gridea/output/post/react-native-jie-jue-zai-ios-duan-shi-yong-yuan-jiao-borderradius-shi-xiao-wen-ti/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/react-native-jie-jue-zai-ios-duan-shi-yong-yuan-jiao-borderradius-shi-xiao-wen-ti/index.html">
         </link>
         <updated>2019-07-04T08:58:40.000Z</updated>
         <content type="html"><![CDATA[<p>在IOS上使用圆角属性失败解决方法：</p>
@@ -127,8 +138,8 @@ location /admin/ {
     </entry>
     <entry>
         <title type="html"><![CDATA[Nuxt.js 部署nginx服务器，静态资源加载不出来解决方法]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/nuxtjs-bu-shu-nginx-fu-wu-qi-jing-tai-zi-yuan-jia-zai-bu-chu-lai-jie-jue-fang-fa</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/nuxtjs-bu-shu-nginx-fu-wu-qi-jing-tai-zi-yuan-jia-zai-bu-chu-lai-jie-jue-fang-fa">
+        <id>/Users/mac/Documents/Gridea/output/post/nuxtjs-bu-shu-nginx-fu-wu-qi-jing-tai-zi-yuan-jia-zai-bu-chu-lai-jie-jue-fang-fa/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/nuxtjs-bu-shu-nginx-fu-wu-qi-jing-tai-zi-yuan-jia-zai-bu-chu-lai-jie-jue-fang-fa/index.html">
         </link>
         <updated>2019-07-01T16:48:28.000Z</updated>
         <content type="html"><![CDATA[<p>找到项目配置文件，注释以下内容，刷新页面就可以了。</p>
@@ -142,8 +153,8 @@ location /admin/ {
     </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript  replace全部替换方法]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/javascript-replace</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/javascript-replace">
+        <id>/Users/mac/Documents/Gridea/output/post/javascript-replace/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/javascript-replace/index.html">
         </link>
         <updated>2019-06-17T10:33:49.000Z</updated>
         <content type="html"><![CDATA[<h3 id="替换第一次出现的字符串">替换第一次出现的字符串</h3>
@@ -161,8 +172,8 @@ console.log(str);
     </entry>
     <entry>
         <title type="html"><![CDATA[微信小程序 scroll-view 左右无法滑动问题]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/wei-xin-xiao-cheng-xu-scroll-view-zuo-you-wu-fa-hua-dong-wen-ti</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/wei-xin-xiao-cheng-xu-scroll-view-zuo-you-wu-fa-hua-dong-wen-ti">
+        <id>/Users/mac/Documents/Gridea/output/post/wei-xin-xiao-cheng-xu-scroll-view-zuo-you-wu-fa-hua-dong-wen-ti/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/wei-xin-xiao-cheng-xu-scroll-view-zuo-you-wu-fa-hua-dong-wen-ti/index.html">
         </link>
         <updated>2019-05-31T13:28:06.000Z</updated>
         <content type="html"><![CDATA[<ul>
@@ -173,8 +184,8 @@ console.log(str);
     </entry>
     <entry>
         <title type="html"><![CDATA[docker 使用]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/docker-ji-ben-ming-ling</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/docker-ji-ben-ming-ling">
+        <id>/Users/mac/Documents/Gridea/output/post/docker-ji-ben-ming-ling/index.html</id>
+        <link href="/Users/mac/Documents/Gridea/output/post/docker-ji-ben-ming-ling/index.html">
         </link>
         <updated>2019-05-30T10:12:59.000Z</updated>
         <content type="html"><![CDATA[<h3 id="拉取镜像">拉取镜像</h3>
@@ -220,36 +231,6 @@ docker rm $(docker ps -a -a) //删除所有容器
 <h4 id="docker-error-error-starting-userland-proxy-bind-for-000080-unexpected-error">Docker Error: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error</h4>
 <pre><code>sudo apachectl stop
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[docker 安装宝塔面板]]></title>
-        <id>https://ershaoyelxw.github.io/gridea.github.io/post/docker-an-zhuang-bao-ta-mian-ban</id>
-        <link href="https://ershaoyelxw.github.io/gridea.github.io/post/docker-an-zhuang-bao-ta-mian-ban">
-        </link>
-        <updated>2019-05-30T10:08:41.000Z</updated>
-        <content type="html"><![CDATA[<p>docker 安装宝塔面板</p>
-<h3 id="docker-安装宝塔面板">docker 安装宝塔面板</h3>
-<ul>
-<li>把hub.docker.com上centos系统镜像拉取下来</li>
-</ul>
-<pre><code>docker pull centos
-</code></pre>
-<ul>
-<li>创建自己的容器</li>
-</ul>
-<pre><code>docker run -i -t -d --name bt -p 80:80 -p 8888:8888 -p 3306:3306 --privileged=true -v /User/mac/workspace/dockerworkspace:/www/wwwroot centos
-</code></pre>
-<ul>
-<li>进入容器</li>
-</ul>
-<p>bt: 容器名称
-/bin/bash: 直接使用bash命令行</p>
-<pre><code>docker exec -it bt /bin/bash
-</code></pre>
-<ul>
-<li>bt.cn 查看安装命令</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
